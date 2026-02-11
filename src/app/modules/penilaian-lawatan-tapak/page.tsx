@@ -5,7 +5,7 @@ export default function PenilaianLawatanTapakPage() {
     <PenilaianLawatanTapakView
       audience="internal"
       backHref="/modules"
-      backLabel="Kembali Ke Senarai Modul"
+      backLabel="Kembali Ke Senarai"
     />
   );
 }

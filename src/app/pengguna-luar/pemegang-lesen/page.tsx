@@ -6,7 +6,7 @@ export default function PemegangLesenOverviewPage() {
     <div className="space-y-6">
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Modul</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Kategori</p>
           <p className="mt-2 text-3xl font-bold text-slate-900">5</p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -38,7 +38,7 @@ export default function PemegangLesenOverviewPage() {
               href={`/pengguna-luar/pemegang-lesen/${submodule.slug}`}
               className="mt-4 inline-flex rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
             >
-              Buka Modul
+              Buka
             </Link>
           </article>
         ))}

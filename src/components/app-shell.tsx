@@ -8,10 +8,21 @@ import { getDefaultDashboardByRole, useAuth } from "./auth/auth-provider";
 type NavItem = {
   href: string;
   label: string;
+  activePrefixes?: string[];
 };
 
-function isActive(pathname: string, href: string) {
-  return pathname === href || pathname.startsWith(`${href}/`);
+function isActive(pathname: string, item: NavItem) {
+  if (pathname === item.href || pathname.startsWith(`${item.href}/`)) {
+    return true;
+  }
+
+  if (!item.activePrefixes) {
+    return false;
+  }
+
+  return item.activePrefixes.some(
+    (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+  );
 }
 
 function classNames(...classes: Array<string | false>) {
@@ -31,16 +42,41 @@ export default function AppShell({
     ? session.role === "internal"
       ? [
           { href: "/dashboard/internal", label: "Dashboard Dalaman" },
-          { href: "/modules", label: "Modul Sistem" },
+          {
+            href: "/modules/perlesenan-dan-kawalselia",
+            label: "Perlesenan & Kawalselia",
+            activePrefixes: [
+              "/modules/perlesenan",
+              "/modules/kawalselia",
+              "/modules/instalasi-nuklear",
+              "/modules/pengkompaunan",
+              "/modules/penggeledahan",
+              "/modules/siasatan-pendakwaan",
+              "/modules/pengurusan-tindakbalas-nuklear-sptn",
+              "/modules/permit",
+              "/modules/peperiksaan-pensijilan",
+              "/modules/pengiktirafan",
+              "/modules/penilaian-lawatan-tapak",
+              "/modules/kewangan",
+              "/modules/pangkalan-data",
+              "/modules/laporan-statistik",
+              "/modules/pentadbir-dalaman",
+              "/modules/manual-pengguna",
+            ],
+          },
+          {
+            href: "/modules/pengurusan-sumber-manusia",
+            label: "Pengurusan Sumber Manusia",
+          },
         ]
       : session.role === "external_pl"
         ? [
             { href: "/dashboard/external/pl", label: "Dashboard PL" },
-            { href: "/pengguna-luar", label: "Modul PL & Awam" },
+            { href: "/pengguna-luar", label: "PL & Awam" },
           ]
         : [
             { href: "/dashboard/external/awam", label: "Dashboard Awam" },
-            { href: "/pengguna-luar/awam", label: "Modul Orang Awam" },
+            { href: "/pengguna-luar/awam", label: "Orang Awam" },
           ]
     : [];
 
@@ -68,7 +104,7 @@ export default function AppShell({
                     href={item.href}
                     className={classNames(
                       "rounded-lg px-3 py-2 text-sm font-semibold transition-colors",
-                      isActive(pathname, item.href)
+                      isActive(pathname, item)
                         ? "bg-slate-900 text-white"
                         : "text-slate-700 hover:bg-slate-100",
                     )}

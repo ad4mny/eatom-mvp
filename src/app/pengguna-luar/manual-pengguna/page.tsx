@@ -5,7 +5,7 @@ export default function ManualPenggunaExternalPage() {
     <ManualPenggunaView
       audience="external_pl"
       backHref="/pengguna-luar"
-      backLabel="Kembali Ke Modul PL & Awam"
+      backLabel="Kembali Ke PL & Awam"
     />
   );
 }

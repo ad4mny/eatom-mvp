@@ -44,7 +44,7 @@ export default function PengiktirafanPage() {
     <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-8">
       <div className="mx-auto max-w-[var(--module-content-width)] space-y-6">
         <section className="rounded-2xl bg-[linear-gradient(120deg,#14532d,#16a34a)] p-7 text-emerald-50">
-          <p className="text-xs font-semibold tracking-[0.16em] text-emerald-200">MODUL BERASINGAN</p>
+          <p className="text-xs font-semibold tracking-[0.16em] text-emerald-200">SISTEM</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight">Pengiktirafan</h1>
           <p className="mt-2 text-sm text-emerald-100">
             MVP mock data untuk pengurusan pengiktirafan pekerja sinaran, PPB, dan tenaga pengajar.
@@ -53,7 +53,7 @@ export default function PengiktirafanPage() {
             href="/modules"
             className="mt-4 inline-flex rounded-lg border border-white/40 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
           >
-            Kembali Ke Senarai Modul
+            Kembali Ke Senarai
           </Link>
         </section>
 

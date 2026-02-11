@@ -6,11 +6,11 @@ export default function HomePage() {
       <div className="mx-auto max-w-7xl">
         <section className="rounded-2xl bg-[linear-gradient(125deg,#0f172a,#1e3a8a)] p-8 text-slate-100">
           <p className="text-sm font-semibold tracking-[0.14em] text-slate-300">
-            MODUL SISTEM PERLESENAN DAN KAWALSELIA
+            SISTEM PERLESENAN DAN KAWALSELIA / PENGURUSAN SUMBER MANUSIA
           </p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight">Portal Akses Sistem</h1>
           <p className="mt-3 max-w-3xl text-sm text-slate-200">
-            Modul ini mempunyai akses Dalaman (Kakitangan), PL (Pemegang Lesen),
+            Sistem ini mempunyai akses Dalaman (Kakitangan), PL (Pemegang Lesen),
             dan Orang Awam (Bukan Pemegang Lesen).
           </p>
 

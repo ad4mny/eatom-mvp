@@ -54,7 +54,7 @@ export default function KewanganPage() {
     <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-8">
       <div className="mx-auto max-w-[var(--module-content-width)] space-y-6">
         <section className="rounded-2xl bg-[linear-gradient(120deg,#7c2d12,#b45309)] p-7 text-amber-50">
-          <p className="text-xs font-semibold tracking-[0.16em] text-amber-200">MODUL BERASINGAN</p>
+          <p className="text-xs font-semibold tracking-[0.16em] text-amber-200">SISTEM</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight">Kewangan</h1>
           <p className="mt-2 text-sm text-amber-100">
             MVP mock data untuk aliran pembayaran Permohonan Lesen, Pengiktirafan Pekerja, dan Peperiksaan.
@@ -63,7 +63,7 @@ export default function KewanganPage() {
             href="/modules"
             className="mt-4 inline-flex rounded-lg border border-white/40 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
           >
-            Kembali Ke Senarai Modul
+            Kembali Ke Senarai
           </Link>
         </section>
 

@@ -5,7 +5,7 @@ export default function ManualPenggunaPage() {
     <ManualPenggunaView
       audience="internal"
       backHref="/modules"
-      backLabel="Kembali Ke Senarai Modul"
+      backLabel="Kembali Ke Senarai"
     />
   );
 }

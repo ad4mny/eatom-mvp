@@ -1,30 +1,40 @@
 import Link from "next/link";
-import { kawalseliaSubmodules } from "./data";
+import { pengurusanSumberManusiaSubmodules } from "./data";
 
-export default function KawalseliaOverviewPage() {
+export default function PengurusanSumberManusiaOverviewPage() {
   return (
     <div className="space-y-6">
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Jumlah</p>
-          <p className="mt-2 text-3xl font-bold text-slate-900">18</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Jumlah
+          </p>
+          <p className="mt-2 text-3xl font-bold text-slate-900">
+            {pengurusanSumberManusiaSubmodules.length}
+          </p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Status MVP</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Status MVP
+          </p>
           <p className="mt-2 text-3xl font-bold text-slate-900">Aktif</p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Sumber Data</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Sumber Data
+          </p>
           <p className="mt-2 text-3xl font-bold text-slate-900">Mock</p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Kitaran</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Kitaran
+          </p>
           <p className="mt-2 text-3xl font-bold text-slate-900">v0</p>
         </article>
       </section>
 
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-        {kawalseliaSubmodules.map((submodule) => (
+        {pengurusanSumberManusiaSubmodules.map((submodule) => (
           <article
             key={submodule.slug}
             className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm"
@@ -35,7 +45,7 @@ export default function KawalseliaOverviewPage() {
               {submodule.processes.length} proses kerja
             </div>
             <Link
-              href={`/modules/kawalselia/${submodule.slug}`}
+              href={`/modules/pengurusan-sumber-manusia/${submodule.slug}`}
               className="mt-4 inline-flex rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
             >
               Buka

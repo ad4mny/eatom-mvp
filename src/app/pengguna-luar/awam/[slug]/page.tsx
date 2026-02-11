@@ -24,7 +24,7 @@ export default async function AwamServicePage({ params }: Readonly<AwamServicePa
       <PenilaianLawatanTapakView
         audience="external_public"
         backHref="/pengguna-luar/awam"
-        backLabel="Kembali Ke Modul Orang Awam"
+        backLabel="Kembali Ke Orang Awam"
         mode="embedded"
       />
     );

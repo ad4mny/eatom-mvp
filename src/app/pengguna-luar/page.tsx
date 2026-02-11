@@ -34,9 +34,9 @@ export default function PenggunaLuarModulePage() {
       <div className="mx-auto max-w-[var(--module-content-width)] space-y-6">
         <section className="rounded-2xl bg-[linear-gradient(120deg,#166534,#22c55e)] p-7 text-emerald-50">
           <p className="text-xs font-semibold tracking-[0.16em] text-emerald-200">
-            MODUL SISTEM PERLESENAN DAN KAWALSELIA
+            SISTEM PERLESENAN DAN KAWALSELIA
           </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight">Modul PL & Awam</h1>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight">PL & Awam</h1>
           <p className="mt-2 text-sm text-emerald-100">
             Akses mengikut peranan: Pemegang Lesen (PL) atau Orang Awam (Bukan Pemegang Lesen).
           </p>
@@ -44,12 +44,12 @@ export default function PenggunaLuarModulePage() {
 
         <section className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
           <h2 className="text-xl font-bold text-slate-900">
-            {isPemegangLesen ? "Modul Pemegang Lesen" : "Modul Orang Awam"}
+            {isPemegangLesen ? "Pemegang Lesen" : "Orang Awam"}
           </h2>
           <p className="mt-2 text-sm text-slate-600">
             {isPemegangLesen
-              ? "Akses PL telah dipisahkan kepada modul Pendaftaran Pengguna Baharu, Pemegang Lesen, dan Manual Pengguna."
-              : "Akses awam difokuskan kepada modul permohonan orang awam."}
+              ? "Akses PL telah dipisahkan kepada Pendaftaran Pengguna Baharu, Pemegang Lesen, dan Manual Pengguna."
+              : "Akses awam difokuskan kepada permohonan orang awam."}
           </p>
 
           {isPemegangLesen ? (
@@ -65,7 +65,7 @@ export default function PenggunaLuarModulePage() {
                     href={module.href}
                     className="mt-4 inline-flex rounded-lg bg-emerald-700 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-800"
                   >
-                    Buka Modul
+                    Buka
                   </Link>
                 </article>
               ))}
@@ -76,7 +76,7 @@ export default function PenggunaLuarModulePage() {
                 href="/pengguna-luar/awam"
                 className="rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800"
               >
-                Buka Modul Orang Awam
+                Buka Orang Awam
               </Link>
             </div>
           )}

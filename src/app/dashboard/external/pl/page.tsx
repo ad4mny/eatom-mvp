@@ -85,7 +85,7 @@ export default function ExternalPlDashboardPage() {
 
         <section className="grid gap-6 xl:grid-cols-[1.2fr_1.8fr]">
           <BarChartCard
-            title="Volum Mengikut Modul PL"
+            title="Volum Mengikut Kategori PL"
             subtitle="Agihan kes aktif merentasi modul pemegang lesen."
             data={moduleMix}
             barColor="#059669"
@@ -126,7 +126,7 @@ export default function ExternalPlDashboardPage() {
               href="/pengguna-luar"
               className="rounded-lg bg-emerald-700 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-800"
             >
-              Buka Modul PL & Awam
+              Buka PL & Awam
             </Link>
             <Link
               href="/pengguna-luar/pendaftaran-pengguna-baharu"

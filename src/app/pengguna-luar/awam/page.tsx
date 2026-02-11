@@ -18,7 +18,7 @@ export default function AwamOverviewPage() {
           <p className="mt-2 text-3xl font-bold text-slate-900">Mock</p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Modul</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Sistem</p>
           <p className="mt-2 text-3xl font-bold text-slate-900">Aktif</p>
         </article>
       </section>

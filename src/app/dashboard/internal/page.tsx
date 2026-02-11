@@ -8,7 +8,7 @@ import {
 
 export default function InternalDashboardPage() {
   const metrics = [
-    { label: "Modul Aktif", value: "16", note: "Semua modul dalaman" },
+    { label: "Sistem Aktif", value: "17", note: "Semua sistem dalaman" },
     { label: "Permohonan 30 Hari", value: "1,284", note: "+8.3% vs bulan lepas" },
     { label: "Tugasan SLA Patuh", value: "92.4%", note: "Purata 3.1 hari" },
     { label: "Rekod Perlu Tindakan", value: "146", note: "-12 rekod minggu ini" },
@@ -28,6 +28,7 @@ export default function InternalDashboardPage() {
     { label: "Kawalselia", value: 296 },
     { label: "Inst. Nuklear", value: 154 },
     { label: "Penguatkuasaan", value: 132 },
+    { label: "Sumber Manusia", value: 118 },
     { label: "Kewangan", value: 168 },
     { label: "Laporan", value: 122 },
   ];
@@ -84,7 +85,7 @@ export default function InternalDashboardPage() {
 
         <section className="grid gap-6 xl:grid-cols-[1.15fr_1.85fr]">
           <BarChartCard
-            title="Permohonan Mengikut Modul"
+            title="Permohonan Mengikut Sistem"
             subtitle="Bilangan permohonan aktif mengikut modul utama (mock)."
             data={moduleLoad}
             barColor="#0f766e"
@@ -127,19 +128,25 @@ export default function InternalDashboardPage() {
               href="/modules"
               className="rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800"
             >
-              Buka Semua Modul
+              Buka Semua
             </Link>
             <Link
               href="/modules/perlesenan"
               className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
             >
-              Modul Perlesenan
+              Perlesenan
             </Link>
             <Link
               href="/modules/kawalselia"
               className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
             >
-              Modul Kawalselia
+              Kawalselia
+            </Link>
+            <Link
+              href="/modules/pengurusan-sumber-manusia"
+              className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
+            >
+              Pengurusan Sumber Manusia
             </Link>
           </div>
         </section>

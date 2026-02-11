@@ -68,7 +68,7 @@ export default function ManualPenggunaView({
         {mode === "standalone" ? (
           <section className="rounded-2xl bg-[linear-gradient(120deg,#064e3b,#059669)] p-7 text-emerald-50">
             <p className="text-xs font-semibold tracking-[0.16em] text-emerald-200">
-              MODUL BERKONGSI
+              SISTEM BERKONGSI
             </p>
             <h1 className="mt-2 text-3xl font-bold tracking-tight">Manual Pengguna</h1>
             <p className="mt-2 text-sm text-emerald-100">{audienceText}</p>

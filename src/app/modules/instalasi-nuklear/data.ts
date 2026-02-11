@@ -154,7 +154,7 @@ export const instalasiNuklearSubmodules: InstalasiNuklearSubmodule[] = [
     description:
       "Notis import/eksport merangkumi item modul pengesahan maklumbalas serta perubahan kritikal.",
     processes: [
-      "Rujukan Perkara Modul 3 (Pengesahan Maklumbalas)",
+      "Rujukan Perkara 3 (Pengesahan Maklumbalas)",
       "Perubahan Tarikh",
       "Kehilangan",
       "Kelewatan",

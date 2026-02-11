@@ -87,7 +87,7 @@ export default function LaporanStatistikPage() {
     <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-8">
       <div className="mx-auto max-w-[var(--module-content-width)] space-y-6">
         <section className="rounded-2xl bg-[linear-gradient(120deg,#581c87,#7e22ce)] p-7 text-purple-50">
-          <p className="text-xs font-semibold tracking-[0.16em] text-purple-200">MODUL BERASINGAN</p>
+          <p className="text-xs font-semibold tracking-[0.16em] text-purple-200">SISTEM</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight">Laporan dan Statistik</h1>
           <p className="mt-2 text-sm text-purple-100">
             MVP mock data untuk piagam, statistik, spesifikasi output, peperiksaan, label/surat, audit dan prestasi penilai.
@@ -96,7 +96,7 @@ export default function LaporanStatistikPage() {
             href="/modules"
             className="mt-4 inline-flex rounded-lg border border-white/40 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
           >
-            Kembali Ke Senarai Modul
+            Kembali Ke Senarai
           </Link>
         </section>
 

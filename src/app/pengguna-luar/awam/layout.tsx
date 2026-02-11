@@ -11,7 +11,7 @@ export default function AwamLayout({
           <p className="text-xs font-semibold tracking-[0.16em] text-blue-200">
             AKSES PENGGUNA LUAR (BUKAN PEMEGANG LESEN / ORANG AWAM)
           </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight">Modul Orang Awam</h1>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight">Orang Awam</h1>
           <p className="mt-2 max-w-3xl text-sm text-blue-100">
             Permohonan awam merangkumi pelupusan, penceramah, outreach, latihan industri,
             pengecualian Akta 304, lesen perubatan, dan penilaian lawatan tapak.

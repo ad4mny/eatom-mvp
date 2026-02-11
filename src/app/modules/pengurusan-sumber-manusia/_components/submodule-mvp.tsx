@@ -1,43 +1,43 @@
-import type { PenguatkuasaanSubmodule } from "../data";
+import type { PengurusanSumberManusiaSubmodule } from "../data";
 
 type MockRecord = {
   refNo: string;
-  pegawai: string;
+  unit: string;
   perkara: string;
   status: string;
   updatedAt: string;
 };
 
-function buildMockRecords(submodule: PenguatkuasaanSubmodule): MockRecord[] {
-  const baseCode = `PKS-${String(submodule.number).padStart(2, "0")}`;
+function buildMockRecords(submodule: PengurusanSumberManusiaSubmodule): MockRecord[] {
+  const baseCode = `PSM-${String(submodule.number).padStart(2, "0")}`;
 
   return [
     {
       refNo: `${baseCode}-001`,
-      pegawai: "Pegawai Operasi 1",
+      unit: "Bahagian Pengurusan Sumber Manusia",
       perkara: `${submodule.mockFocus} - Rekod 1`,
-      status: "Dalam Tindakan",
+      status: "Dalam Semakan",
       updatedAt: "11 Feb 2026",
     },
     {
       refNo: `${baseCode}-002`,
-      pegawai: "Pegawai Operasi 2",
+      unit: "Urusetia Latihan",
       perkara: `${submodule.mockFocus} - Rekod 2`,
-      status: "Semakan Ketua Unit",
+      status: "Diluluskan",
       updatedAt: "10 Feb 2026",
     },
     {
       refNo: `${baseCode}-003`,
-      pegawai: "Pegawai Operasi 3",
+      unit: "Urusetia Ceramah",
       perkara: `${submodule.mockFocus} - Rekod 3`,
-      status: "Selesai",
+      status: "Perlu Tindakan",
       updatedAt: "09 Feb 2026",
     },
     {
       refNo: `${baseCode}-004`,
-      pegawai: "Pegawai Operasi 4",
+      unit: "Pentadbir Sistem",
       perkara: `${submodule.mockFocus} - Rekod 4`,
-      status: "Perlu Maklumbalas",
+      status: "Selesai",
       updatedAt: "08 Feb 2026",
     },
   ];
@@ -45,11 +45,11 @@ function buildMockRecords(submodule: PenguatkuasaanSubmodule): MockRecord[] {
 
 export default function SubmoduleMvp({
   submodule,
-}: Readonly<{ submodule: PenguatkuasaanSubmodule }>) {
+}: Readonly<{ submodule: PengurusanSumberManusiaSubmodule }>) {
   const records = buildMockRecords(submodule);
   const jumlah = records.length;
   const selesai = records.filter((record) => record.status === "Selesai").length;
-  const tindakan = records.filter((record) => record.status !== "Selesai").length;
+  const tindakan = records.filter((record) => record.status === "Perlu Tindakan").length;
 
   return (
     <div className="space-y-6">
@@ -68,7 +68,9 @@ export default function SubmoduleMvp({
           <p className="mt-2 text-3xl font-bold text-slate-900">{selesai}</p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Dalam Tindakan</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Perlu Tindakan
+          </p>
           <p className="mt-2 text-3xl font-bold text-slate-900">{tindakan}</p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
@@ -95,7 +97,7 @@ export default function SubmoduleMvp({
         <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-bold text-slate-900">Senarai Rekod (Mock)</h3>
-            <button className="rounded-lg bg-rose-700 px-4 py-2 text-sm font-semibold text-white hover:bg-rose-800">
+            <button className="rounded-lg bg-sky-700 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-800">
               Rekod Baru
             </button>
           </div>
@@ -104,7 +106,7 @@ export default function SubmoduleMvp({
               <thead>
                 <tr className="border-b border-slate-200 text-left text-slate-500">
                   <th className="px-2 py-2 font-semibold">No. Rujukan</th>
-                  <th className="px-2 py-2 font-semibold">Pegawai</th>
+                  <th className="px-2 py-2 font-semibold">Unit</th>
                   <th className="px-2 py-2 font-semibold">Perkara</th>
                   <th className="px-2 py-2 font-semibold">Status</th>
                   <th className="px-2 py-2 font-semibold">Kemaskini</th>
@@ -114,7 +116,7 @@ export default function SubmoduleMvp({
                 {records.map((record) => (
                   <tr key={record.refNo} className="border-b border-slate-100">
                     <td className="px-2 py-3 font-semibold text-slate-900">{record.refNo}</td>
-                    <td className="px-2 py-3 text-slate-700">{record.pegawai}</td>
+                    <td className="px-2 py-3 text-slate-700">{record.unit}</td>
                     <td className="px-2 py-3 text-slate-700">{record.perkara}</td>
                     <td className="px-2 py-3 text-slate-700">{record.status}</td>
                     <td className="px-2 py-3 text-slate-500">{record.updatedAt}</td>

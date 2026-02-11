@@ -125,7 +125,7 @@ export default function ExternalAwamDashboardPage() {
               href="/pengguna-luar/awam"
               className="rounded-lg bg-blue-700 px-4 py-2 text-sm font-semibold text-white hover:bg-blue-800"
             >
-              Buka Modul Orang Awam
+              Buka Orang Awam
             </Link>
             <Link
               href="/pengguna-luar/awam/permohonan-penilaian-lawatan-tapak-awam"

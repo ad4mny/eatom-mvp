@@ -62,7 +62,7 @@ export default function PenilaianLawatanTapakView({
         {mode === "standalone" ? (
           <section className="rounded-2xl bg-[linear-gradient(120deg,#1e3a8a,#2563eb)] p-7 text-blue-50">
             <p className="text-xs font-semibold tracking-[0.16em] text-blue-200">
-              MODUL BERKONGSI
+              SISTEM BERKONGSI
             </p>
             <h1 className="mt-2 text-3xl font-bold tracking-tight">Penilaian Lawatan Tapak</h1>
             <p className="mt-2 text-sm text-blue-100">{description}</p>

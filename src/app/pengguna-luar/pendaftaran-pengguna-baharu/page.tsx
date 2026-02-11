@@ -4,7 +4,7 @@ export default function PendaftaranPenggunaBaharuPage() {
   return (
     <PendaftaranPenggunaBaharuView
       backHref="/pengguna-luar"
-      backLabel="Kembali Ke Modul PL & Awam"
+      backLabel="Kembali Ke PL & Awam"
     />
   );
 }

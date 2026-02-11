@@ -26,7 +26,7 @@ export default function PermitPage() {
     <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-8">
       <div className="mx-auto max-w-[var(--module-content-width)] space-y-6">
         <section className="rounded-2xl bg-[linear-gradient(120deg,#0f766e,#0ea5a4)] p-7 text-cyan-50">
-          <p className="text-xs font-semibold tracking-[0.16em] text-cyan-200">MODUL BERASINGAN</p>
+          <p className="text-xs font-semibold tracking-[0.16em] text-cyan-200">SISTEM</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight">Permit</h1>
           <p className="mt-2 text-sm text-cyan-100">
             MVP mock data untuk integrasi API dengan Sistem ePermit.
@@ -35,7 +35,7 @@ export default function PermitPage() {
             href="/modules"
             className="mt-4 inline-flex rounded-lg border border-white/40 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
           >
-            Kembali Ke Senarai Modul
+            Kembali Ke Senarai
           </Link>
         </section>
 

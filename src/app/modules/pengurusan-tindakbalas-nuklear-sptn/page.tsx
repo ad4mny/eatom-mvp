@@ -41,7 +41,7 @@ export default function SubModulPengurusanTindakbalasNuklearSptnPage() {
     <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-8">
       <div className="mx-auto max-w-[var(--module-content-width)] space-y-6">
         <section className="rounded-2xl bg-[linear-gradient(120deg,#4c1d95,#7c3aed)] p-7 text-violet-50">
-          <p className="text-xs font-semibold tracking-[0.16em] text-violet-200">MODUL BERASINGAN</p>
+          <p className="text-xs font-semibold tracking-[0.16em] text-violet-200">SISTEM</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight">
             Pengurusan Tindakbalas Nuklear - SPTN
           </h1>
@@ -52,7 +52,7 @@ export default function SubModulPengurusanTindakbalasNuklearSptnPage() {
             href="/modules"
             className="mt-4 inline-flex rounded-lg border border-white/40 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
           >
-            Kembali Ke Senarai Modul
+            Kembali Ke Senarai
           </Link>
         </section>
 

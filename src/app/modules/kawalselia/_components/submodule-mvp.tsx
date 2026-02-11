@@ -54,9 +54,6 @@ export default function SubmoduleMvp({
   return (
     <div className="space-y-6">
       <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-        <p className="text-xs font-semibold tracking-wide text-emerald-700">
-          MODUL {submodule.number}
-        </p>
         <h2 className="mt-1 text-2xl font-bold text-slate-900">{submodule.title}</h2>
         <p className="mt-2 text-sm text-slate-600">{submodule.description}</p>
       </article>

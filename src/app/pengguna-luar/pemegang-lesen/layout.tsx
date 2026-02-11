@@ -11,9 +11,9 @@ export default function PemegangLesenLayout({
           <p className="text-xs font-semibold tracking-[0.16em] text-emerald-200">
             AKSES PENGGUNA LUAR (PEMEGANG LESEN)
           </p>
-          <h1 className="mt-2 text-3xl font-bold tracking-tight">Modul Pemegang Lesen</h1>
+          <h1 className="mt-2 text-3xl font-bold tracking-tight">Pemegang Lesen</h1>
           <p className="mt-2 max-w-3xl text-sm text-emerald-100">
-            Modul utama pemegang lesen meliputi laman utama, permohonan realtime,
+            Ruang utama pemegang lesen meliputi laman utama, permohonan realtime,
             maklumbalas & kemaskini, pemantauan radiologi, dan akaun pengguna.
           </p>
         </section>
