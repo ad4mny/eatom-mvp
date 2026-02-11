@@ -1,0 +1,3 @@
+export const INTERNAL_MODULE_CONTENT_WIDTH = "88rem";
+export const EXTERNAL_MODULE_CONTENT_WIDTH = "88rem";
+export const DASHBOARD_CONTENT_WIDTH = "88rem";

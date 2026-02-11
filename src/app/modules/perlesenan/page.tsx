@@ -26,7 +26,7 @@ export default function PerlesenanOverviewPage() {
             href={`/modules/perlesenan/${submodule.slug}`}
             className="mt-4 inline-flex rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
           >
-            Buka Sub-Modul
+            Buka Modul
           </Link>
         </article>
       ))}

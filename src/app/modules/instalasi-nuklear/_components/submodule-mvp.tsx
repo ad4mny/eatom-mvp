@@ -1,41 +1,41 @@
-import type { KawalseliaSubmodule } from "../data";
+import type { InstalasiNuklearSubmodule } from "../data";
 
 type MockRecord = {
   refNo: string;
-  pemohon: string;
+  entiti: string;
   perkara: string;
   status: string;
   updatedAt: string;
 };
 
-function buildMockRecords(submodule: KawalseliaSubmodule): MockRecord[] {
-  const baseCode = `KWS-${String(submodule.number).padStart(2, "0")}`;
+function buildMockRecords(submodule: InstalasiNuklearSubmodule): MockRecord[] {
+  const baseCode = `INK-${String(submodule.number).padStart(2, "0")}`;
 
   return [
     {
       refNo: `${baseCode}-001`,
-      pemohon: "Agensi Teknik Nusantara",
+      entiti: "Fasiliti Nuklear Serantau",
       perkara: `${submodule.mockFocus} - Rekod 1`,
       status: "Dalam Semakan",
       updatedAt: "11 Feb 2026",
     },
     {
       refNo: `${baseCode}-002`,
-      pemohon: "Makmal Integriti Barat",
+      entiti: "Operator Reaktor Demo",
       perkara: `${submodule.mockFocus} - Rekod 2`,
-      status: "Menunggu Maklumbalas",
+      status: "Menunggu Pengesahan",
       updatedAt: "10 Feb 2026",
     },
     {
       refNo: `${baseCode}-003`,
-      pemohon: "Konsortium Gamma Selatan",
+      entiti: "Makmal Perlindungan Bahan",
       perkara: `${submodule.mockFocus} - Rekod 3`,
-      status: "Disahkan",
+      status: "Diluluskan",
       updatedAt: "09 Feb 2026",
     },
     {
       refNo: `${baseCode}-004`,
-      pemohon: "Unit Operasi Timur",
+      entiti: "Unit Sokongan Operasi",
       perkara: `${submodule.mockFocus} - Rekod 4`,
       status: "Perlu Tindakan",
       updatedAt: "08 Feb 2026",
@@ -45,20 +45,25 @@ function buildMockRecords(submodule: KawalseliaSubmodule): MockRecord[] {
 
 export default function SubmoduleMvp({
   submodule,
-}: Readonly<{ submodule: KawalseliaSubmodule }>) {
+}: Readonly<{ submodule: InstalasiNuklearSubmodule }>) {
   const records = buildMockRecords(submodule);
   const jumlah = records.length;
-  const disahkan = records.filter((record) => record.status === "Disahkan").length;
+  const lulus = records.filter((record) => record.status === "Diluluskan").length;
   const tindakan = records.filter((record) => record.status === "Perlu Tindakan").length;
 
   return (
     <div className="space-y-6">
       <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-        <p className="text-xs font-semibold tracking-wide text-emerald-700">
+        <p className="text-xs font-semibold tracking-wide text-amber-700">
           MODUL {submodule.number}
         </p>
         <h2 className="mt-1 text-2xl font-bold text-slate-900">{submodule.title}</h2>
         <p className="mt-2 text-sm text-slate-600">{submodule.description}</p>
+        {submodule.note ? (
+          <p className="mt-3 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-800">
+            Nota: {submodule.note}
+          </p>
+        ) : null}
       </article>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -67,16 +72,16 @@ export default function SubmoduleMvp({
           <p className="mt-2 text-3xl font-bold text-slate-900">{jumlah}</p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Disahkan</p>
-          <p className="mt-2 text-3xl font-bold text-slate-900">{disahkan}</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Diluluskan</p>
+          <p className="mt-2 text-3xl font-bold text-slate-900">{lulus}</p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Perlu Tindakan</p>
           <p className="mt-2 text-3xl font-bold text-slate-900">{tindakan}</p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
-          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Mock Data</p>
-          <p className="mt-2 text-3xl font-bold text-slate-900">MVP</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Sumber Data</p>
+          <p className="mt-2 text-3xl font-bold text-slate-900">Mock</p>
         </article>
       </section>
 
@@ -98,7 +103,7 @@ export default function SubmoduleMvp({
         <article className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
           <div className="flex items-center justify-between">
             <h3 className="text-lg font-bold text-slate-900">Senarai Rekod (Mock)</h3>
-            <button className="rounded-lg bg-emerald-700 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-800">
+            <button className="rounded-lg bg-amber-700 px-4 py-2 text-sm font-semibold text-white hover:bg-amber-800">
               Rekod Baru
             </button>
           </div>
@@ -107,7 +112,7 @@ export default function SubmoduleMvp({
               <thead>
                 <tr className="border-b border-slate-200 text-left text-slate-500">
                   <th className="px-2 py-2 font-semibold">No. Rujukan</th>
-                  <th className="px-2 py-2 font-semibold">Pemohon</th>
+                  <th className="px-2 py-2 font-semibold">Entiti</th>
                   <th className="px-2 py-2 font-semibold">Perkara</th>
                   <th className="px-2 py-2 font-semibold">Status</th>
                   <th className="px-2 py-2 font-semibold">Kemaskini</th>
@@ -117,7 +122,7 @@ export default function SubmoduleMvp({
                 {records.map((record) => (
                   <tr key={record.refNo} className="border-b border-slate-100">
                     <td className="px-2 py-3 font-semibold text-slate-900">{record.refNo}</td>
-                    <td className="px-2 py-3 text-slate-700">{record.pemohon}</td>
+                    <td className="px-2 py-3 text-slate-700">{record.entiti}</td>
                     <td className="px-2 py-3 text-slate-700">{record.perkara}</td>
                     <td className="px-2 py-3 text-slate-700">{record.status}</td>
                     <td className="px-2 py-3 text-slate-500">{record.updatedAt}</td>
