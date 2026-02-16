@@ -1,8 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 
 const ROLE_COOKIE_KEY = "eatom_mock_role";
+const SESSION_COOKIE_KEY = "eatom_mock_auth";
 const validRoles = new Set(["internal", "external_pl", "external_public"]);
 const LOGIN_PATH = "/login";
+const publicPaths = new Set(["/", "/landing", LOGIN_PATH]);
 const internalOnlyPrefixes = ["/erp", "/modules", "/dashboard/internal"];
 const externalOnlyPrefixes = ["/external", "/dashboard/external", "/pengguna-luar"];
 const externalPlOnlyPrefixes = [
@@ -43,7 +45,7 @@ function getDefaultPathByRole(role: string) {
     return "/external/non-license-holder";
   }
 
-  return "/login";
+  return LOGIN_PATH;
 }
 
 function getSafeNextPath(pathname: string, search: string) {
@@ -64,7 +66,11 @@ function isPathInPrefixes(pathname: string, prefixes: string[]) {
   );
 }
 
-export function middleware(request: NextRequest) {
+function isPublicPath(pathname: string) {
+  return publicPaths.has(pathname);
+}
+
+export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
   if (isStaticOrApiPath(pathname)) {
@@ -72,10 +78,10 @@ export function middleware(request: NextRequest) {
   }
 
   const role = request.cookies.get(ROLE_COOKIE_KEY)?.value;
+  const authToken = request.cookies.get(SESSION_COOKIE_KEY)?.value;
 
-  if (!role || !validRoles.has(role)) {
-    // Lock down all pages except login for unauthenticated users.
-    if (pathname === LOGIN_PATH) {
+  if (!role || !authToken || !validRoles.has(role)) {
+    if (isPublicPath(pathname)) {
       return NextResponse.next();
     }
 
@@ -89,6 +95,7 @@ export function middleware(request: NextRequest) {
 
     const response = NextResponse.redirect(loginUrl);
     response.cookies.delete(ROLE_COOKIE_KEY);
+    response.cookies.delete(SESSION_COOKIE_KEY);
     return response;
   }
 

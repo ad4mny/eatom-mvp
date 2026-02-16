@@ -1,8 +1,16 @@
 import ModuleHeader from "@/components/erp/module-header";
 import SecondaryTabs from "../_components/secondary-tabs";
 import { licenseHolderSubmodules } from "../_lib/license-holder";
+import { requireAuth } from "@/lib/auth/guards";
 
-export default function LicenseHolderLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function LicenseHolderLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  await requireAuth({
+    allowedRoles: ["external_pl"],
+    nextPath: "/external/license-holder",
+  });
+
   const tabs = licenseHolderSubmodules.map((submodule) => ({
     slug: submodule.slug,
     title: submodule.title,

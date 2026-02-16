@@ -30,8 +30,22 @@ type AuthContextValue = {
 
 const STORAGE_KEY = "eatom_mock_session";
 const ROLE_COOKIE_KEY = "eatom_mock_role";
+const SESSION_COOKIE_KEY = "eatom_mock_auth";
 
 const AuthContext = createContext<AuthContextValue | null>(null);
+
+function getCookieValue(key: string) {
+  const cookie = document.cookie
+    .split(";")
+    .map((item) => item.trim())
+    .find((item) => item.startsWith(`${key}=`));
+
+  if (!cookie) {
+    return null;
+  }
+
+  return decodeURIComponent(cookie.split("=")[1] ?? "");
+}
 
 export function getDefaultDashboardByRole(role: UserRole) {
   if (role === "internal") {
@@ -53,13 +67,26 @@ export default function AuthProvider({
 
   useEffect(() => {
     try {
+      const roleCookie = getCookieValue(ROLE_COOKIE_KEY);
+      const authCookie = getCookieValue(SESSION_COOKIE_KEY);
+
+      if (!roleCookie || !authCookie) {
+        window.localStorage.removeItem(STORAGE_KEY);
+        setSession(null);
+        return;
+      }
+
       const raw = window.localStorage.getItem(STORAGE_KEY);
       if (raw) {
         const parsed = JSON.parse(raw) as AuthSession;
         if (parsed?.role && parsed?.name) {
           setSession(parsed);
+          return;
         }
       }
+
+      window.localStorage.removeItem(STORAGE_KEY);
+      setSession(null);
     } catch {
       // Ignore malformed local session.
     } finally {
@@ -75,13 +102,15 @@ export default function AuthProvider({
 
     setSession(next);
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-    document.cookie = `${ROLE_COOKIE_KEY}=${input.role}; path=/; max-age=604800`;
+    document.cookie = `${ROLE_COOKIE_KEY}=${input.role}; path=/; SameSite=Lax`;
+    document.cookie = `${SESSION_COOKIE_KEY}=${Date.now()}; path=/; SameSite=Lax`;
   }, []);
 
   const logout = useCallback(() => {
     setSession(null);
     window.localStorage.removeItem(STORAGE_KEY);
     document.cookie = `${ROLE_COOKIE_KEY}=; path=/; max-age=0`;
+    document.cookie = `${SESSION_COOKIE_KEY}=; path=/; max-age=0`;
   }, []);
 
   const value = useMemo<AuthContextValue>(
