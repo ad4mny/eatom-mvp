@@ -16,7 +16,7 @@ export default function InternalDashboardPage() {
             Susun atur modul dalaman mengikut kategori operasi utama.
           </p>
           <Link
-            href="/modules"
+            href="/erp/licensing-regulatory"
             className="mt-4 inline-flex rounded-lg border border-white/40 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
           >
             Paparan Kategori

@@ -5,7 +5,7 @@ const SESSION_COOKIE_KEY = "eatom_mock_auth";
 const validRoles = new Set(["internal", "external_pl", "external_public"]);
 const LOGIN_PATH = "/login";
 const publicPaths = new Set(["/", "/landing", LOGIN_PATH]);
-const internalOnlyPrefixes = ["/erp", "/modules", "/dashboard/internal"];
+const internalOnlyPrefixes = ["/erp", "/dashboard/internal"];
 const externalOnlyPrefixes = ["/external", "/dashboard/external", "/pengguna-luar"];
 const externalPlOnlyPrefixes = [
   "/external/license-holder",
@@ -17,6 +17,30 @@ const externalPublicOnlyPrefixes = [
   "/dashboard/external/awam",
   "/pengguna-luar/awam",
 ];
+const legacyErpPrefixRedirects = [
+  { from: "/erp/perlesenan-dan-kawalselia", to: "/erp/licensing-regulatory", preserveSuffix: false },
+  { from: "/erp/peperiksaan-pensijilan", to: "/erp/licensing-regulatory/peperiksaan", preserveSuffix: false },
+  { from: "/erp/perlesenan", to: "/erp/licensing-regulatory/perlesenan", preserveSuffix: false },
+  { from: "/erp/kawalselia", to: "/erp/licensing-regulatory/kawalselia", preserveSuffix: false },
+  { from: "/erp/permit", to: "/erp/licensing-regulatory/permit", preserveSuffix: false },
+  { from: "/erp/instalasi-nuklear", to: "/erp/licensing-regulatory", preserveSuffix: false },
+  { from: "/erp/penguatkuasaan", to: "/erp/licensing-regulatory", preserveSuffix: false },
+  { from: "/erp/pengiktirafan", to: "/erp/licensing-regulatory", preserveSuffix: false },
+  { from: "/erp/penilaian-lawatan-tapak", to: "/erp/licensing-regulatory", preserveSuffix: false },
+  { from: "/erp/kewangan", to: "/erp/licensing-regulatory", preserveSuffix: false },
+  { from: "/erp/pangkalan-data", to: "/erp/licensing-regulatory", preserveSuffix: false },
+  { from: "/erp/laporan-statistik", to: "/erp/licensing-regulatory", preserveSuffix: false },
+  { from: "/erp/pengurusan-sumber-manusia", to: "/erp/hr-management", preserveSuffix: true },
+  { from: "/erp/sistem-pemantauan-radiologi", to: "/erp/environmental-radiation-monitoring", preserveSuffix: true },
+  { from: "/erp/maklumat-pekerja-sinaran", to: "/erp/radiation-worker-information", preserveSuffix: true },
+  { from: "/erp/sistem-pengurusan-dokumen", to: "/erp/document-management", preserveSuffix: true },
+  { from: "/erp/maklumat-dos-pekerja-sinaran", to: "/erp/radiation-worker-dose-information", preserveSuffix: true },
+  { from: "/erp/sistem-khidmat-pengurusan", to: "/erp/management-services", preserveSuffix: true },
+  { from: "/erp/pentadbiran-sistem", to: "/erp/management-services", preserveSuffix: false },
+  { from: "/erp/peti-pesanan", to: "/erp/management-services", preserveSuffix: false },
+  { from: "/erp/pentadbir-dalaman", to: "/erp/management-services/pentadbir-dalaman", preserveSuffix: false },
+  { from: "/erp/manual-pengguna", to: "/erp/management-services/manual-pengguna", preserveSuffix: false },
+] as const;
 
 type Role = "internal" | "external_pl" | "external_public";
 
@@ -70,11 +94,46 @@ function isPublicPath(pathname: string) {
   return publicPaths.has(pathname);
 }
 
+function getLegacyErpRedirectPath(pathname: string) {
+  const match = legacyErpPrefixRedirects.find(
+    ({ from }) => pathname === from || pathname.startsWith(`${from}/`),
+  );
+
+  if (!match) {
+    return null;
+  }
+
+  if (!match.preserveSuffix) {
+    return match.to;
+  }
+
+  const suffix = pathname.slice(match.from.length);
+  return `${match.to}${suffix}`;
+}
+
 export function proxy(request: NextRequest) {
   const { pathname, search } = request.nextUrl;
 
   if (isStaticOrApiPath(pathname)) {
     return NextResponse.next();
+  }
+
+  if (pathname === "/modules" || pathname.startsWith("/modules/")) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname =
+      pathname === "/modules"
+        ? "/erp/dashboard"
+        : pathname.replace(/^\/modules/, "/erp");
+    redirectUrl.search = search;
+    return NextResponse.redirect(redirectUrl);
+  }
+
+  const legacyErpRedirectPath = getLegacyErpRedirectPath(pathname);
+  if (legacyErpRedirectPath) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = legacyErpRedirectPath;
+    redirectUrl.search = search;
+    return NextResponse.redirect(redirectUrl);
   }
 
   const role = request.cookies.get(ROLE_COOKIE_KEY)?.value;

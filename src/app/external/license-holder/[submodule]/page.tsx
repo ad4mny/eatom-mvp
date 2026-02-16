@@ -38,7 +38,7 @@ export default async function LicenseHolderSubmodulePage({
       <Card>
         <CardContent className="flex flex-col gap-3 p-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-sm font-semibold text-slate-900">Sub-Module: {selectedSubmodule.title}</p>
+            <p className="text-sm font-semibold text-slate-900">{selectedSubmodule.title}</p>
             <p className="text-xs text-slate-600">Proses kerja tersedia sebagai action list dan detail tabs.</p>
           </div>
 

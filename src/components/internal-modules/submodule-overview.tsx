@@ -11,42 +11,40 @@ export default function SubmoduleOverview({
   submodule: InternalModuleSubmodule;
 }>) {
   return (
-    <main className="min-h-screen bg-slate-50 px-4 py-8 sm:px-8">
-      <div className="mx-auto max-w-[var(--module-content-width)] space-y-6">
-        <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <p className="text-xs font-semibold tracking-[0.16em] text-slate-500">{normalizeUiLabel(moduleDef.title)}</p>
-          <h1 className="mt-2 text-2xl font-bold text-slate-900">{normalizeUiLabel(submodule.title)}</h1>
-          <p className="mt-2 text-sm text-slate-600">{submodule.description}</p>
-          <p className="mt-4 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-medium text-slate-700">
-            Buka proses kerja terus dari senarai ini atau pilih submodul lain di sidebar.
-          </p>
-        </section>
+    <div className="space-y-6">
+      <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <p className="text-xs font-semibold tracking-[0.16em] text-slate-500">{normalizeUiLabel(moduleDef.title)}</p>
+        <h1 className="mt-2 text-2xl font-bold text-slate-900">{normalizeUiLabel(submodule.title)}</h1>
+        <p className="mt-2 text-sm text-slate-600">{submodule.description}</p>
+        <p className="mt-4 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-medium text-slate-700">
+          Buka proses kerja terus dari senarai ini atau pilih submodul lain di sidebar.
+        </p>
+      </section>
 
-        <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
-          {submodule.processes.map((process) => {
-            const hasForm = Boolean(getFormById(process.formId));
-            return (
-              <article key={process.slug} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
-                <h2 className="text-base font-bold text-slate-900">{normalizeUiLabel(process.title)}</h2>
-                <p className="mt-2 text-sm text-slate-600">
-                  {process.description ?? "Paparan proses kerja berdasarkan skop modul."}
+      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+        {submodule.processes.map((process) => {
+          const hasForm = Boolean(getFormById(process.formId));
+          return (
+            <article key={process.slug} className="rounded-xl border border-slate-200 bg-white p-5 shadow-sm">
+              <h2 className="text-base font-bold text-slate-900">{normalizeUiLabel(process.title)}</h2>
+              <p className="mt-2 text-sm text-slate-600">
+                {process.description ?? "Paparan proses kerja berdasarkan skop modul."}
+              </p>
+              {hasForm ? (
+                <p className="mt-3 rounded-md border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-700">
+                  Termasuk borang mock
                 </p>
-                {hasForm ? (
-                  <p className="mt-3 rounded-md border border-blue-200 bg-blue-50 px-3 py-2 text-xs font-semibold text-blue-700">
-                    Termasuk borang mock
-                  </p>
-                ) : null}
-                <Link
-                  href={`/modules/${moduleDef.routeSlug}/${submodule.slug}/${process.slug}`}
-                  className="mt-4 inline-flex rounded-lg bg-slate-900 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-700"
-                >
-                  Lihat Proses
-                </Link>
-              </article>
-            );
-          })}
-        </section>
-      </div>
-    </main>
+              ) : null}
+              <Link
+                href={`/erp/${moduleDef.routeSlug}/${submodule.slug}/${process.slug}`}
+                className="mt-4 inline-flex rounded-lg bg-slate-900 px-3 py-2 text-sm font-semibold text-white hover:bg-slate-700"
+              >
+                Lihat Proses
+              </Link>
+            </article>
+          );
+        })}
+      </section>
+    </div>
   );
 }

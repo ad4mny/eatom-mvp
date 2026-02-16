@@ -7,7 +7,7 @@ export default function PemegangLesenOverviewPage() {
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Kategori</p>
-          <p className="mt-2 text-3xl font-bold text-slate-900">5</p>
+          <p className="mt-2 text-3xl font-bold text-slate-900">{pemegangLesenSubmodules.length}</p>
         </article>
         <article className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm">
           <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Akses</p>

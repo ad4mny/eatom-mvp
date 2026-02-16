@@ -4,7 +4,10 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useMemo } from "react";
 import { useAuth } from "@/components/auth/auth-provider";
-import { externalMainModules } from "@/config/external-main-modules";
+import {
+  externalMainModules,
+  type ExternalAudienceRole,
+} from "@/config/external-main-modules";
 import { cn } from "@/lib/utils";
 
 type ExternalMainSidebarProps = {
@@ -31,6 +34,7 @@ export default function ExternalMainSidebar({
   const pathname = usePathname();
   const router = useRouter();
   const { session, isReady, logout } = useAuth();
+  const sessionRole = session?.role;
 
   const initials = useMemo(() => {
     const source = session?.name?.trim();
@@ -51,6 +55,38 @@ export default function ExternalMainSidebar({
     router.replace("/login");
   };
 
+  const effectiveRole = useMemo<ExternalAudienceRole | null>(() => {
+    if (sessionRole === "external_pl" || sessionRole === "external_public") {
+      return sessionRole;
+    }
+
+    if (pathname.startsWith("/external/license-holder")) {
+      return "external_pl";
+    }
+
+    if (pathname.startsWith("/external/non-license-holder")) {
+      return "external_public";
+    }
+
+    return null;
+  }, [pathname, sessionRole]);
+
+  const visibleModules = useMemo(
+    () =>
+      externalMainModules.filter((module) => {
+        if (!module.visibleTo || module.visibleTo.length === 0) {
+          return true;
+        }
+
+        if (!effectiveRole) {
+          return module.visibleTo.length > 1;
+        }
+
+        return module.visibleTo.includes(effectiveRole);
+      }),
+    [effectiveRole],
+  );
+
   return (
     <div className={cn("flex h-full min-h-0 flex-col bg-white/95", className)}>
       <div className="space-y-4 border-b border-slate-200 p-4">
@@ -60,7 +96,7 @@ export default function ExternalMainSidebar({
       </div>
 
       <nav className="flex-1 space-y-1 overflow-y-auto p-3" aria-label="External Main Module Navigation">
-        {externalMainModules.map((module) => {
+        {visibleModules.map((module) => {
           const isActive = pathname === module.href || pathname.startsWith(`${module.href}/`);
           return (
             <Link

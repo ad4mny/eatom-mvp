@@ -7,38 +7,6 @@ export type PemegangLesenSubmodule = {
 
 export const pemegangLesenSubmodules: PemegangLesenSubmodule[] = [
   {
-    slug: "laman-utama",
-    title: "Laman Utama",
-    description:
-      "Pusat ringkasan peti masuk, permohonan, status maklumbalas, notis pelanggan, dan radas pengkelasan semula kawasan.",
-    processes: [
-      "2.1.1 Peti Masuk - Mesej",
-      "2.1.1 Peti Masuk - Peringatan",
-      "2.1.1 Peti Masuk - Surat Aduan Kemalangan",
-      "2.1.1 Peti Masuk - Surat Maklumbalas Pemeriksaan",
-      "2.1.2 Permohonan - Lesen",
-      "2.1.2 Permohonan - Yuran Permohonan",
-      "2.1.2 Permohonan - Pengiktirafan",
-      "2.1.2 Permohonan - Pendaftaran",
-      "2.1.2 Permohonan - Kebenaran",
-      "2.1.2 Permohonan - Program Perlindungan Sinaran",
-      "2.1.2 Permohonan - Pelan Kecemasan",
-      "2.1.2 Permohonan - Pelan Sekuriti",
-      "2.1.2 Permohonan - Permohonan Pengesahan Pengecualian Akta 304",
-      "2.1.3 Status Maklumbalas - Meter Tinjau",
-      "2.1.3 Status Maklumbalas - Pemilikan Bahan Radioaktif",
-      "2.1.3 Status Maklumbalas - Pemilikan Bahan Nuklear",
-      "2.1.3 Status Maklumbalas - Pemilikan Radas Penyinaran",
-      "2.1.3 Status Maklumbalas - Penyata Penjualan",
-      "2.1.3 Status Maklumbalas - Pelupusan Bahan / Radas",
-      "2.1.3 Status Maklumbalas - Pemeriksaan Perubatan",
-      "2.1.3 Status Maklumbalas - Laporan Juruperunding",
-      "2.1.3 Status Maklumbalas - Pemberhentian Pekerja",
-      "2.1.4 Notis Pelanggan",
-      "2.1.5 Radas Penyinaran Pengkelasan Semula Kawasan",
-    ],
-  },
-  {
     slug: "permohonan",
     title: "Permohonan (Realtime Monitoring)",
     description:
@@ -126,7 +94,6 @@ export const pemegangLesenSubmodules: PemegangLesenSubmodule[] = [
     description:
       "Syarikat key-in data permonitoran alam sekitar meliputi pra permonitoran, permohonan, permonitoran sampel, akaun pengguna dan laporan.",
     processes: [
-      "2.4.1 Laman Utama - Status Permohonan",
       "2.4.2 Pra Permonitoran - Maklumat Syarikat Diselenggara",
       "2.4.2 Pra Permonitoran - Pendaftaran Baru",
       "2.4.2 Pra Permonitoran - Senarai Syarikat Permonitoran Radiologi",

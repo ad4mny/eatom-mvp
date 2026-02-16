@@ -25,7 +25,7 @@ export default async function PerlesenanPage({ searchParams }: Readonly<Perlesen
       <Card>
         <CardContent className="flex flex-col gap-3 p-4 md:flex-row md:items-center md:justify-between">
           <div>
-            <p className="text-sm font-semibold text-slate-900">Sub-Module: Perlesenan</p>
+            <p className="text-sm font-semibold text-slate-900">Perlesenan</p>
             <p className="text-xs text-slate-600">Proses kerja dipaparkan sebagai tindakan jadual dan tab detail, bukan item menu.</p>
           </div>
           <div className="flex flex-wrap gap-2">

@@ -1,15 +1,15 @@
-import ModulePlaceholder from "@/components/erp/module-placeholder";
+import { notFound } from "next/navigation";
+import ModuleOverview from "@/components/internal-modules/module-overview";
+import { getModuleByRouteSlug } from "@/lib/internal-modules/catalog";
+
+const MODULE_ROUTE_SLUG = "maklumat-dos-pekerja-sinaran";
 
 export default function RadiationWorkerDoseInformationPage() {
-  return (
-    <ModulePlaceholder
-      title="Maklumat Dos Pekerja Sinaran"
-      subtitle="Pelaporan dos berkala, penilaian ambang pendedahan, dan pengawasan pematuhan individu pekerja sinaran."
-      highlights={[
-        "Sub-modul: Laporan Dos, Semakan Ambang, Amaran Pematuhan.",
-        "Data dos dihubungkan kepada rekod lesen dan tindakan kawalselia.",
-        "Paparan trend suku tahunan dan jejak verifikasi pegawai.",
-      ]}
-    />
-  );
+  const moduleDef = getModuleByRouteSlug(MODULE_ROUTE_SLUG);
+
+  if (!moduleDef) {
+    notFound();
+  }
+
+  return <ModuleOverview moduleDef={moduleDef} />;
 }

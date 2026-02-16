@@ -1,15 +1,15 @@
-import ModulePlaceholder from "@/components/erp/module-placeholder";
+import { notFound } from "next/navigation";
+import ModuleOverview from "@/components/internal-modules/module-overview";
+import { getModuleByRouteSlug } from "@/lib/internal-modules/catalog";
+
+const MODULE_ROUTE_SLUG = "sistem-pengurusan-dokumen";
 
 export default function DocumentManagementPage() {
-  return (
-    <ModulePlaceholder
-      title="Sistem Pengurusan Dokumen"
-      subtitle="Pengurusan dokumen rasmi, versi, serta audit trail bagi setiap permohonan dan keputusan operasi."
-      highlights={[
-        "Sub-modul: Repositori Dokumen, Templat Surat, Audit Trail, Carian Pintar.",
-        "Integrasi dokumen wajib mengikut jenis proses kerja.",
-        "Sokongan jejak perubahan untuk pematuhan audit dalaman.",
-      ]}
-    />
-  );
+  const moduleDef = getModuleByRouteSlug(MODULE_ROUTE_SLUG);
+
+  if (!moduleDef) {
+    notFound();
+  }
+
+  return <ModuleOverview moduleDef={moduleDef} />;
 }

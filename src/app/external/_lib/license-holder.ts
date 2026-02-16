@@ -13,12 +13,6 @@ export type LicenseHolderSubmodule = {
 
 export const licenseHolderSubmodules: LicenseHolderSubmodule[] = [
   {
-    slug: "laman-utama",
-    title: "Laman Utama",
-    description: "Peti masuk, status permohonan dan notis pelanggan.",
-    focus: "Operasi Harian Pemegang Lesen",
-  },
-  {
     slug: "permohonan",
     title: "Permohonan",
     description: "Permohonan lesen, pengiktirafan, pendaftaran dan kebenaran.",

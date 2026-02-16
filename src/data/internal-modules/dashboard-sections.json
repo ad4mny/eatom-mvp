@@ -5,7 +5,7 @@
     "links": [
       {
         "label": "Tugasan Saya",
-        "href": "/modules/peti-pesanan/tugasan-saya",
+        "href": "/erp/management-services/pentadbir-dalaman",
         "description": "Semak dan urus tugasan yang ditugaskan kepada anda."
       }
     ]
@@ -16,12 +16,12 @@
     "links": [
       {
         "label": "Tukar Kata Laluan",
-        "href": "/modules/pentadbiran-sistem/tukar-kata-laluan",
+        "href": "/erp/management-services/manual-pengguna",
         "description": "Kemaskini kata laluan akaun dalaman."
       },
       {
         "label": "Terima Aduan",
-        "href": "/modules/pentadbiran-sistem/terima-aduan",
+        "href": "/erp/licensing-regulatory/kawalselia",
         "description": "Terima aduan baharu dan teruskan ke aliran siasatan."
       }
     ]
@@ -32,37 +32,37 @@
     "links": [
       {
         "label": "Sistem Perlesenan dan Kawalselia",
-        "href": "/modules/perlesenan-dan-kawalselia",
+        "href": "/erp/licensing-regulatory",
         "description": "Akses perlesenan, kawalselia, dan operasi berkaitan."
       },
       {
         "label": "Sistem Pengurusan Sumber Manusia",
-        "href": "/modules/pengurusan-sumber-manusia",
+        "href": "/erp/hr-management",
         "description": "Akses fungsi pengurusan sumber manusia dalaman."
       },
       {
         "label": "Sistem Pemantauan Radiasi Persekitaran",
-        "href": "/modules/sistem-pemantauan-radiologi",
+        "href": "/erp/environmental-radiation-monitoring",
         "description": "Akses pemantauan radiasi persekitaran."
       },
       {
         "label": "Maklumat Pekerja Sinaran",
-        "href": "/modules/maklumat-pekerja-sinaran",
+        "href": "/erp/radiation-worker-information",
         "description": "Akses pendaftaran, semakan, dan profil pekerja sinaran."
       },
       {
         "label": "Sistem Pengurusan Dokumen",
-        "href": "/modules/sistem-pengurusan-dokumen",
+        "href": "/erp/document-management",
         "description": "Akses dokumen, surat, fail, dan laporan dokumen."
       },
       {
         "label": "Maklumat Dos Pekerja Sinaran",
-        "href": "/modules/maklumat-dos-pekerja-sinaran",
+        "href": "/erp/radiation-worker-dose-information",
         "description": "Akses rekod dos kebangsaan serta laporan dos."
       },
       {
         "label": "Sistem Khidmat Pengurusan",
-        "href": "/modules/sistem-khidmat-pengurusan",
+        "href": "/erp/management-services",
         "description": "Akses khidmat sokongan pengurusan dan media kreatif."
       }
     ]
@@ -73,7 +73,7 @@
     "links": [
       {
         "label": "Laporan dan Statistik",
-        "href": "/modules/laporan-statistik",
+        "href": "/erp/licensing-regulatory",
         "description": "Jana dan semak laporan piagam, statistik, dan analitik."
       }
     ]
@@ -84,7 +84,7 @@
     "links": [
       {
         "label": "Manual Pengguna",
-        "href": "/modules/manual-pengguna",
+        "href": "/erp/management-services/manual-pengguna",
         "description": "Rujukan dokumentasi penggunaan sistem eATOM."
       }
     ]

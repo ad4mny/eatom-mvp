@@ -6,14 +6,6 @@
   "description": "Pengurusan pendaftaran, semakan, dan kemaskini profil pekerja sinaran.",
   "submodules": [
     {
-      "slug": "laman-utama",
-      "title": "Laman Utama",
-      "description": "Paparan ringkasan modul.",
-      "processes": [
-        { "slug": "laman-utama", "title": "Laman Utama" }
-      ]
-    },
-    {
       "slug": "pendaftaran-peperiksaan",
       "title": "Pendaftaran (Peperiksaan)",
       "description": "Pendaftaran peperiksaan PPS/PUK/PR.",

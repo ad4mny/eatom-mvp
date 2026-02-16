@@ -58,7 +58,13 @@ export default function MainSidebar({ onNavigate, className }: Readonly<MainSide
 
       <nav className="flex-1 space-y-1 overflow-y-auto p-3" aria-label="Main Module Navigation">
         {mainModules.map((module) => {
-          const isActive = pathname === module.href || pathname.startsWith(`${module.href}/`);
+          const isActive =
+            pathname === module.href ||
+            pathname.startsWith(`${module.href}/`) ||
+            (module.activePrefixes?.some(
+              (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`),
+            ) ??
+              false);
           return (
             <Link
               key={module.id}

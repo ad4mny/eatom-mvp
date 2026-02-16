@@ -6,14 +6,6 @@
   "description": "Pemantauan radiasi persekitaran, data permonitoran, dan sokongan teknikal.",
   "submodules": [
     {
-      "slug": "laman-utama",
-      "title": "Laman Utama",
-      "description": "Paparan ringkas akses fungsi modul.",
-      "processes": [
-        { "slug": "laman-utama", "title": "Laman Utama", "description": "Paparan ringkasan modul." }
-      ]
-    },
-    {
       "slug": "perlesenan",
       "title": "Perlesenan",
       "description": "Aliran pra permonitoran dan permohonan permonitoran.",

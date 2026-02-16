@@ -3,6 +3,7 @@ export type MainModule = {
   title: string;
   description: string;
   href: string;
+  activePrefixes?: string[];
 };
 
 export const mainModules: MainModule[] = [

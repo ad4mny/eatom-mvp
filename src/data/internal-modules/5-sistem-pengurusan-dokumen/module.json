@@ -6,14 +6,6 @@
   "description": "Pengurusan dokumen, surat, fail, ISO, mesyuarat dan laporan.",
   "submodules": [
     {
-      "slug": "laman-utama",
-      "title": "Laman Utama",
-      "description": "Paparan utama modul.",
-      "processes": [
-        { "slug": "laman-utama", "title": "Laman Utama" }
-      ]
-    },
-    {
       "slug": "maklumat-dokumen",
       "title": "Maklumat Dokumen",
       "description": "Akses dokumen cetakan, mesyuarat, dan laporan kerja.",

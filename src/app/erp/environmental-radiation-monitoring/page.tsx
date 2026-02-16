@@ -1,15 +1,15 @@
-import ModulePlaceholder from "@/components/erp/module-placeholder";
+import { notFound } from "next/navigation";
+import ModuleOverview from "@/components/internal-modules/module-overview";
+import { getModuleByRouteSlug } from "@/lib/internal-modules/catalog";
+
+const MODULE_ROUTE_SLUG = "sistem-pemantauan-radiologi";
 
 export default function EnvironmentalRadiationMonitoringPage() {
-  return (
-    <ModulePlaceholder
-      title="Sistem Pemantauan Radiasi Persekitaran"
-      subtitle="Pemantauan data persekitaran, amaran trend, dan analitik pematuhan had radiasi kebangsaan."
-      highlights={[
-        "Sub-modul: Stesen Pemantauan, Analitik Trend, Insiden, Laporan Pematuhan.",
-        "Sink data automatik untuk dashboard pemantauan masa nyata.",
-        "Cross-link ke rekod tindakan kawalselia apabila ambang melebihi had.",
-      ]}
-    />
-  );
+  const moduleDef = getModuleByRouteSlug(MODULE_ROUTE_SLUG);
+
+  if (!moduleDef) {
+    notFound();
+  }
+
+  return <ModuleOverview moduleDef={moduleDef} />;
 }

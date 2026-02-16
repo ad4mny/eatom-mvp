@@ -1,15 +1,15 @@
-import ModulePlaceholder from "@/components/erp/module-placeholder";
+import { notFound } from "next/navigation";
+import ModuleOverview from "@/components/internal-modules/module-overview";
+import { getModuleByRouteSlug } from "@/lib/internal-modules/catalog";
+
+const MODULE_ROUTE_SLUG = "maklumat-pekerja-sinaran";
 
 export default function RadiationWorkerInformationPage() {
-  return (
-    <ModulePlaceholder
-      title="Maklumat Pekerja Sinaran"
-      subtitle="Profil menyeluruh pekerja sinaran termasuk kompetensi, peperiksaan, serta jejak penglibatan operasi."
-      highlights={[
-        "Sub-modul: Profil Pekerja, Pendaftaran Peperiksaan, Sejarah Pensijilan.",
-        "Pautan dua hala ke data dos dan status perlesenan.",
-        "Rule engine untuk validasi kelayakan sebelum kelulusan lesen.",
-      ]}
-    />
-  );
+  const moduleDef = getModuleByRouteSlug(MODULE_ROUTE_SLUG);
+
+  if (!moduleDef) {
+    notFound();
+  }
+
+  return <ModuleOverview moduleDef={moduleDef} />;
 }

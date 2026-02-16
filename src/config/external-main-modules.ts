@@ -1,8 +1,11 @@
+export type ExternalAudienceRole = "external_pl" | "external_public";
+
 export type ExternalMainModule = {
   id: string;
   title: string;
   description: string;
   href: string;
+  visibleTo?: ExternalAudienceRole[];
 };
 
 export const externalMainModules: ExternalMainModule[] = [
@@ -11,17 +14,20 @@ export const externalMainModules: ExternalMainModule[] = [
     title: "Dashboard External",
     description: "Ringkasan aktiviti untuk semua pengguna luar.",
     href: "/external/dashboard",
+    visibleTo: ["external_pl", "external_public"],
   },
   {
     id: "license-holder",
     title: "Portal Pemegang Lesen",
     description: "Permohonan, maklumbalas, pemantauan radiologi dan akaun pengguna.",
     href: "/external/license-holder",
+    visibleTo: ["external_pl"],
   },
   {
     id: "non-license-holder",
     title: "Portal Bukan Pemegang Lesen",
     description: "Perkhidmatan awam termasuk pelupusan, penceramah, outreach dan lawatan tapak.",
     href: "/external/non-license-holder",
+    visibleTo: ["external_public"],
   },
 ];

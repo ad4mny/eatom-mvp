@@ -5,11 +5,15 @@ import MainSidebar from "@/components/erp/main-sidebar";
 
 export default function ErpLayoutShell({
   children,
-}: Readonly<{ children: React.ReactNode }>) {
+  style,
+}: Readonly<{ children: React.ReactNode; style?: React.CSSProperties }>) {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen overflow-x-hidden lg:grid lg:grid-cols-[22rem_minmax(0,1fr)] lg:overflow-x-visible">
+    <div
+      className="min-h-screen overflow-x-hidden lg:grid lg:grid-cols-[22rem_minmax(0,1fr)] lg:overflow-x-visible"
+      style={style}
+    >
       <aside className="hidden border-r border-slate-200 bg-white/90 lg:sticky lg:top-0 lg:block lg:h-screen lg:self-start">
         <div className="h-full overflow-y-auto">
           <MainSidebar />
@@ -36,7 +40,11 @@ export default function ErpLayoutShell({
           </div>
         </header>
 
-        <main className="space-y-4 px-4 py-5 pb-8 sm:px-6">{children}</main>
+        <main className="bg-slate-50 px-4 py-5 pb-8 sm:px-6">
+          <div className="mx-auto w-full max-w-[var(--module-content-width)] space-y-5">
+            {children}
+          </div>
+        </main>
       </div>
 
       {mobileSidebarOpen ? (
