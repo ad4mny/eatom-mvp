@@ -1,16 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import MainSidebar from "@/components/erp/main-sidebar";
+import ExternalMainSidebar from "@/components/external/main-sidebar";
 
-export default function ErpLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function ExternalLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   return (
     <div className="min-h-screen overflow-x-hidden lg:grid lg:grid-cols-[22rem_minmax(0,1fr)]">
       <aside className="hidden border-r border-slate-200 bg-white/90 lg:block">
         <div className="sticky top-0 h-screen overflow-y-auto">
-          <MainSidebar />
+          <ExternalMainSidebar />
         </div>
       </aside>
 
@@ -18,9 +18,9 @@ export default function ErpLayout({ children }: Readonly<{ children: React.React
         <header className="sticky top-0 z-10 border-b border-slate-200 bg-white/90 px-4 py-3 backdrop-blur sm:px-6">
           <div className="flex items-start justify-between gap-3">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">Enterprise ERP Layout</p>
+              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-slate-500">External User Architecture</p>
               <p className="mt-1 text-sm text-slate-700">
-                One-Click Rule: Proses kerja boleh dicapai dalam dua klik dari Main Module.
+                Dua jenis pengguna: Pemegang Lesen dan Bukan Pemegang Lesen dengan aliran modul yang konsisten.
               </p>
             </div>
 
@@ -48,7 +48,7 @@ export default function ErpLayout({ children }: Readonly<{ children: React.React
           >
             <div className="flex h-full flex-col">
               <div className="flex items-center justify-between border-b border-slate-200 px-4 py-3">
-                <p className="text-sm font-semibold text-slate-900">Navigasi Internal</p>
+                <p className="text-sm font-semibold text-slate-900">Navigasi External</p>
                 <button
                   type="button"
                   onClick={() => setMobileSidebarOpen(false)}
@@ -57,7 +57,7 @@ export default function ErpLayout({ children }: Readonly<{ children: React.React
                   Tutup
                 </button>
               </div>
-              <MainSidebar onNavigate={() => setMobileSidebarOpen(false)} className="min-h-0 flex-1" />
+              <ExternalMainSidebar onNavigate={() => setMobileSidebarOpen(false)} className="min-h-0 flex-1" />
             </div>
           </aside>
         </div>

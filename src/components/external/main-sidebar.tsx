@@ -4,10 +4,10 @@ import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useMemo } from "react";
 import { useAuth } from "@/components/auth/auth-provider";
-import { mainModules } from "@/config/erp-main-modules";
+import { externalMainModules } from "@/config/external-main-modules";
 import { cn } from "@/lib/utils";
 
-type MainSidebarProps = {
+type ExternalMainSidebarProps = {
   onNavigate?: () => void;
   className?: string;
 };
@@ -21,10 +21,13 @@ function getRoleLabel(role: "internal" | "external_pl" | "external_public") {
     return "Pemegang Lesen";
   }
 
-  return "Orang Awam";
+  return "Bukan Pemegang Lesen";
 }
 
-export default function MainSidebar({ onNavigate, className }: Readonly<MainSidebarProps>) {
+export default function ExternalMainSidebar({
+  onNavigate,
+  className,
+}: Readonly<ExternalMainSidebarProps>) {
   const pathname = usePathname();
   const router = useRouter();
   const { session, isReady, logout } = useAuth();
@@ -51,13 +54,13 @@ export default function MainSidebar({ onNavigate, className }: Readonly<MainSide
   return (
     <div className={cn("flex h-full min-h-0 flex-col bg-white/95", className)}>
       <div className="space-y-4 border-b border-slate-200 p-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-teal-700">eATOM ERP</p>
-        <h1 className="text-lg font-bold text-slate-900">Sistem Aplikasi Jabatan Tenaga Atom</h1>
-        <p className="text-xs text-slate-600">Primary Navigation: 8 Main Modules</p>
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-indigo-700">eATOM External</p>
+        <h1 className="text-lg font-bold text-slate-900">Portal Pengguna Luar</h1>
+        <p className="text-xs text-slate-600">Primary Navigation: External Main Modules</p>
       </div>
 
-      <nav className="flex-1 space-y-1 overflow-y-auto p-3" aria-label="Main Module Navigation">
-        {mainModules.map((module) => {
+      <nav className="flex-1 space-y-1 overflow-y-auto p-3" aria-label="External Main Module Navigation">
+        {externalMainModules.map((module) => {
           const isActive = pathname === module.href || pathname.startsWith(`${module.href}/`);
           return (
             <Link
@@ -67,11 +70,11 @@ export default function MainSidebar({ onNavigate, className }: Readonly<MainSide
               className={cn(
                 "block rounded-lg border px-3 py-3 transition-colors",
                 isActive
-                  ? "border-teal-200 bg-teal-50"
+                  ? "border-indigo-200 bg-indigo-50"
                   : "border-transparent bg-white hover:border-slate-200 hover:bg-slate-50",
               )}
             >
-              <p className={cn("text-sm font-semibold", isActive ? "text-teal-800" : "text-slate-900")}>{module.title}</p>
+              <p className={cn("text-sm font-semibold", isActive ? "text-indigo-800" : "text-slate-900")}>{module.title}</p>
               <p className="mt-1 text-xs text-slate-600">{module.description}</p>
             </Link>
           );
@@ -81,7 +84,7 @@ export default function MainSidebar({ onNavigate, className }: Readonly<MainSide
       <div className="border-t border-slate-200 p-3">
         <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
           <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-700 text-sm font-bold text-white">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full bg-indigo-700 text-sm font-bold text-white">
               {initials}
             </div>
             <div className="min-w-0">

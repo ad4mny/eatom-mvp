@@ -1,5 +1,5 @@
 import LandingView from "@/components/landing/landing-view";
 
-export default function LandingPage() {
+export default function LandingAliasPage() {
   return <LandingView />;
 }

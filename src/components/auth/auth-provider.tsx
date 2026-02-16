@@ -35,14 +35,14 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 
 export function getDefaultDashboardByRole(role: UserRole) {
   if (role === "internal") {
-    return "/dashboard/internal";
+    return "/erp/dashboard";
   }
 
   if (role === "external_pl") {
-    return "/dashboard/external/pl";
+    return "/external/license-holder";
   }
 
-  return "/dashboard/external/awam";
+  return "/external/non-license-holder";
 }
 
 export default function AuthProvider({
