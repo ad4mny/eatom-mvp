@@ -79,7 +79,7 @@ export default function MainSidebar({ onNavigate, className }: Readonly<MainSide
       </nav>
 
       <div className="border-t border-slate-200 p-3">
-        <div className="rounded-lg border border-slate-200 bg-slate-50 p-3">
+        <div className=" p-3">
           <div className="flex items-center gap-3">
             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-teal-700 text-sm font-bold text-white">
               {initials}

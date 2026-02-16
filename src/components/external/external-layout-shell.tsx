@@ -9,9 +9,9 @@ export default function ExternalLayoutShell({
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
 
   return (
-    <div className="min-h-screen overflow-x-hidden lg:grid lg:grid-cols-[22rem_minmax(0,1fr)]">
-      <aside className="hidden border-r border-slate-200 bg-white/90 lg:block">
-        <div className="sticky top-0 h-screen overflow-y-auto">
+    <div className="min-h-screen overflow-x-hidden lg:grid lg:grid-cols-[22rem_minmax(0,1fr)] lg:overflow-x-visible">
+      <aside className="hidden border-r border-slate-200 bg-white/90 lg:sticky lg:top-0 lg:block lg:h-screen lg:self-start">
+        <div className="h-full overflow-y-auto">
           <ExternalMainSidebar />
         </div>
       </aside>

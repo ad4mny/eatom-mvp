@@ -219,12 +219,12 @@ export default function LandingView() {
               </motion.p>
 
               <motion.div className="mt-7 flex flex-wrap gap-3" variants={sectionIn}>
-                <Link
+                <a
                   className="inline-flex items-center rounded-xl bg-slate-900 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-slate-700"
                   href="/login"
                 >
                   Access Portal
-                </Link>
+                </a>
                 <Link
                   className="inline-flex items-center rounded-xl border border-slate-300 bg-white/90 px-5 py-2.5 text-sm font-semibold text-slate-700 transition hover:border-slate-400 hover:bg-white"
                   href="/erp/dashboard"
@@ -274,7 +274,7 @@ export default function LandingView() {
           <div className="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {showcasePages.map((item, index) => (
               <motion.article
-                key={item.id}
+                key={`${item.category}-${item.id}`}
                 className="rounded-2xl border border-slate-200 bg-white p-4 shadow-[0_14px_32px_rgba(15,23,42,0.06)]"
                 data-showcase-card
                 whileHover={{ y: -5, transition: { duration: 0.2 } }}

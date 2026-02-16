@@ -1,8 +1,6 @@
-import Link from "next/link";
+import ErpAnalyticsGrid from "@/components/dashboard/erp-analytics-grid";
 import ModuleHeader from "@/components/erp/module-header";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { mainModules } from "@/config/erp-main-modules";
 
 export default function DashboardPage() {
   return (
@@ -44,26 +42,7 @@ export default function DashboardPage() {
         </Card>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Modul Utama</CardTitle>
-        </CardHeader>
-        <CardContent className="grid gap-3 md:grid-cols-2">
-          {mainModules.map((module) => (
-            <Link
-              key={module.id}
-              href={module.href}
-              className="rounded-lg border border-slate-200 bg-slate-50 p-4 hover:border-teal-300 hover:bg-teal-50"
-            >
-              <div className="flex items-start justify-between gap-2">
-                <p className="text-sm font-semibold text-slate-900">{module.title}</p>
-                {module.id === "licensing-regulatory" ? <Badge>Core</Badge> : <Badge tone="muted">Module</Badge>}
-              </div>
-              <p className="mt-1 text-xs text-slate-600">{module.description}</p>
-            </Link>
-          ))}
-        </CardContent>
-      </Card>
+      <ErpAnalyticsGrid />
     </div>
   );
 }

@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { FormEvent, useEffect, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
 import {
   getDefaultDashboardByRole,
   type UserRole,
@@ -44,7 +43,6 @@ function sanitizeNextPath(nextPath: string | null) {
 }
 
 export default function LoginPage() {
-  const router = useRouter();
   const { login, session, isReady } = useAuth();
 
   const [role, setRole] = useState<UserRole>("internal");
@@ -66,13 +64,17 @@ export default function LoginPage() {
     return sanitizeNextPath(params.get("next"));
   }, []);
 
+  const redirectWithReload = (path: string) => {
+    window.location.assign(path);
+  };
+
   useEffect(() => {
     if (!isReady || !session) {
       return;
     }
 
-    router.replace(safeNextPath ?? getDefaultDashboardByRole(session.role));
-  }, [isReady, router, safeNextPath, session]);
+    redirectWithReload(safeNextPath ?? getDefaultDashboardByRole(session.role));
+  }, [isReady, safeNextPath, session]);
 
   const onSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -84,7 +86,7 @@ export default function LoginPage() {
     }
 
     login({ role, name: trimmedName });
-    router.replace(safeNextPath ?? getDefaultDashboardByRole(role));
+    redirectWithReload(safeNextPath ?? getDefaultDashboardByRole(role));
   };
 
   return (

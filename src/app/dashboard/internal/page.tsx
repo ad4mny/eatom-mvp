@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ErpAnalyticsGrid from "@/components/dashboard/erp-analytics-grid";
 import DashboardSectionList from "@/components/internal-modules/dashboard-section-list";
 import { getDashboardSections } from "@/lib/internal-modules/catalog";
 
@@ -21,6 +22,8 @@ export default function InternalDashboardPage() {
             Paparan Kategori
           </Link>
         </section>
+
+        <ErpAnalyticsGrid />
 
         <DashboardSectionList sections={sections} />
       </div>
