@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type {
   InternalModuleDefinition,
   InternalModuleProcess,
@@ -27,23 +26,15 @@ export default function ProcessDetail({
         <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
           <p className="text-xs font-semibold tracking-[0.16em] text-slate-500">{normalizeUiLabel(moduleDef.title)}</p>
           <h1 className="mt-2 text-2xl font-bold text-slate-900">{normalizeUiLabel(process.title)}</h1>
+          <p className="mt-1 text-xs font-semibold uppercase tracking-wide text-slate-500">
+            Submodul: {normalizeUiLabel(submodule.title)}
+          </p>
           <p className="mt-2 text-sm text-slate-600">
             {process.description ?? "Paparan mock untuk semakan proses kerja mengikut keperluan modul."}
           </p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <Link
-              href={`/modules/${moduleDef.routeSlug}/${submodule.slug}`}
-              className="inline-flex rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-            >
-              Kembali ke Submodul
-            </Link>
-            <Link
-              href={`/modules/${moduleDef.routeSlug}`}
-              className="inline-flex rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-            >
-              Kembali ke Modul
-            </Link>
-          </div>
+          <p className="mt-4 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs font-medium text-slate-700">
+            Navigasi modul dan submodul tersedia di sidebar.
+          </p>
         </section>
 
         {form ? <MockFormRenderer form={form} /> : null}

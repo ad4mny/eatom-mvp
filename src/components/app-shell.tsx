@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useState } from "react";
+import InternalModulesSidebar from "./navigation/internal-modules-sidebar";
 import RouteGuard from "./auth/route-guard";
 import { getDefaultDashboardByRole, useAuth } from "./auth/auth-provider";
 
@@ -35,8 +37,16 @@ export default function AppShell({
   const pathname = usePathname();
   const router = useRouter();
   const { isReady, session, logout } = useAuth();
+  const [mobileSidebarOpenPath, setMobileSidebarOpenPath] = useState<string | null>(
+    null,
+  );
 
   const isLoginPage = pathname === "/login";
+  const showInternalSidebar = Boolean(
+    session?.role === "internal" && pathname.startsWith("/modules"),
+  );
+  const isMobileSidebarOpen =
+    showInternalSidebar && mobileSidebarOpenPath === pathname;
 
   const navItems: NavItem[] = session
     ? session.role === "internal"
@@ -69,13 +79,29 @@ export default function AppShell({
       {!isLoginPage && isReady && session ? (
         <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/95 backdrop-blur">
           <div
-            className="mx-auto flex w-full items-center justify-between gap-4 px-4 py-3 sm:px-8"
-            style={{ maxWidth: "var(--module-content-width, 88rem)" }}
+            className={classNames(
+              "flex w-full items-center justify-between gap-4 px-4 py-3 sm:px-8",
+              !showInternalSidebar && "mx-auto",
+            )}
+            style={
+              showInternalSidebar
+                ? undefined
+                : { maxWidth: "var(--module-content-width, 88rem)" }
+            }
           >
             <div className="flex items-center gap-4">
               <Link href="/" className="text-sm font-bold tracking-wide text-slate-900">
                 eATOM
               </Link>
+              {showInternalSidebar ? (
+                <button
+                  type="button"
+                  onClick={() => setMobileSidebarOpenPath(pathname)}
+                  className="rounded-lg border border-slate-300 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 lg:hidden"
+                >
+                  Menu Modul
+                </button>
+              ) : null}
               <nav className="flex items-center gap-2">
                 {navItems.map((item) => (
                   <Link
@@ -119,7 +145,42 @@ export default function AppShell({
         </header>
       ) : null}
 
-      {children}
+      {showInternalSidebar ? (
+        <div className="lg:grid lg:grid-cols-[20rem_minmax(0,1fr)]">
+          <aside className="hidden border-r border-slate-200 bg-white/90 lg:block">
+            <div className="sticky top-[65px] h-[calc(100vh-65px)] overflow-y-auto p-4">
+              <InternalModulesSidebar />
+            </div>
+          </aside>
+          <div className="min-w-0">{children}</div>
+        </div>
+      ) : (
+        children
+      )}
+
+      {showInternalSidebar && isMobileSidebarOpen ? (
+        <div
+          className="fixed inset-0 z-40 bg-slate-900/40 lg:hidden"
+          onClick={() => setMobileSidebarOpenPath(null)}
+        >
+          <aside
+            className="h-full w-[20rem] max-w-[90vw] overflow-y-auto border-r border-slate-200 bg-white p-4 shadow-xl"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="mb-4 flex items-center justify-between gap-2">
+              <p className="text-sm font-bold text-slate-900">Navigasi Modul</p>
+              <button
+                type="button"
+                onClick={() => setMobileSidebarOpenPath(null)}
+                className="rounded-md border border-slate-300 px-2 py-1 text-xs font-semibold text-slate-700 hover:bg-slate-50"
+              >
+                Tutup
+              </button>
+            </div>
+            <InternalModulesSidebar onNavigate={() => setMobileSidebarOpenPath(null)} />
+          </aside>
+        </div>
+      ) : null}
     </RouteGuard>
   );
 }

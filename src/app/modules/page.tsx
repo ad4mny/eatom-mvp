@@ -1,4 +1,3 @@
-import Link from "next/link";
 import DashboardSectionList from "@/components/internal-modules/dashboard-section-list";
 import { getDashboardSections } from "@/lib/internal-modules/catalog";
 
@@ -16,12 +15,9 @@ export default function ModulesPage() {
           <p className="mt-2 rounded-lg border border-blue-200 bg-blue-50 px-3 py-2 text-sm font-semibold text-blue-700">
             Akses Dalaman (Kakitangan)
           </p>
-          <Link
-            href="/dashboard/internal"
-            className="mt-4 inline-flex rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50"
-          >
-            Kembali ke Dashboard
-          </Link>
+          <p className="mt-4 text-xs font-medium text-slate-500">
+            Gunakan sidebar untuk navigasi modul/submodul secara terus.
+          </p>
         </section>
 
         <DashboardSectionList sections={sections} />

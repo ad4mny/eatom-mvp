@@ -14,20 +14,9 @@ export default function ModuleOverview({
           <p className="text-xs font-semibold tracking-[0.16em] text-slate-300">No. {moduleDef.moduleNo}</p>
           <h1 className="mt-2 text-3xl font-bold tracking-tight">{normalizeUiLabel(moduleDef.title)}</h1>
           <p className="mt-2 text-sm text-slate-200">{moduleDef.description}</p>
-          <div className="mt-4 flex flex-wrap gap-2">
-            <Link
-              href="/dashboard/internal"
-              className="inline-flex rounded-lg border border-white/40 px-3 py-2 text-sm font-semibold text-white hover:bg-white/10"
-            >
-              Kembali ke Dashboard
-            </Link>
-            <Link
-              href="/modules"
-              className="inline-flex rounded-lg bg-white px-3 py-2 text-sm font-semibold text-slate-900 hover:bg-slate-100"
-            >
-              Senarai Modul
-            </Link>
-          </div>
+          <p className="mt-4 rounded-lg border border-white/20 bg-white/10 px-3 py-2 text-xs font-medium text-slate-100">
+            Pilih submodul dari sidebar atau terus dari kad di bawah.
+          </p>
         </section>
 
         <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
