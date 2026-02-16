@@ -1,0 +1,127 @@
+{
+  "moduleNo": 7,
+  "slug": "sistem-khidmat-pengurusan",
+  "routeSlug": "sistem-khidmat-pengurusan",
+  "title": "Sistem Khidmat Pengurusan",
+  "description": "Khidmat sokongan pengurusan, media kreatif, outreach, dan cadangan mobile apps.",
+  "submodules": [
+    {
+      "slug": "permohonan-bdr",
+      "title": "Permohonan BDR",
+      "description": "Permohonan bekerja dari rumah berdasarkan kes.",
+      "processes": [
+        { "slug": "permohonan-bdr", "title": "Kes-by-kes (Penyakit Berjangkit/Tiada Pengasuh Anak/Sekolah Tutup)", "formId": "permohonan-bdr" }
+      ]
+    },
+    {
+      "slug": "status-semasa-pegawai",
+      "title": "Status Semasa Pegawai Bekerja di Luar Pejabat",
+      "description": "Penjanaan memo bertugas rasmi luar pejabat.",
+      "processes": [
+        { "slug": "memo-bertugas-rasmi", "title": "Auto Generate Memo Bertugas Rasmi Luar Pejabat" }
+      ]
+    },
+    {
+      "slug": "permohonan-waran-flight",
+      "title": "Permohonan Waran (Flight)",
+      "description": "Permohonan waran penerbangan rasmi.",
+      "processes": [
+        { "slug": "waran-flight", "title": "Permohonan Waran (Flight)" }
+      ]
+    },
+    {
+      "slug": "permohonan-kad-kredit-korporat",
+      "title": "Permohonan Kad Kredit Korporat",
+      "description": "Permohonan kad kredit korporat bagi hotel/flight.",
+      "processes": [
+        { "slug": "kad-kredit-korporat", "title": "Permohonan Kad Kredit Korporat (Hotel/Flight)" }
+      ]
+    },
+    {
+      "slug": "tempahan-kenderaan",
+      "title": "Tempahan Kenderaan",
+      "description": "Tempahan kenderaan rasmi jabatan.",
+      "processes": [
+        { "slug": "tempahan-kenderaan", "title": "Tempahan Kenderaan", "formId": "tempahan-kenderaan" }
+      ]
+    },
+    {
+      "slug": "tempahan-bilik-mesyuarat-sajian",
+      "title": "Tempahan Bilik Mesyuarat/Sajian",
+      "description": "Tempahan bilik dan penilaian prestasi sajian.",
+      "processes": [
+        { "slug": "tempahan-bilik-mesyuarat", "title": "Tempahan Bilik Mesyuarat" },
+        { "slug": "penilaian-prestasi-sajian", "title": "Penilaian Prestasi Tempahan Sajian" }
+      ]
+    },
+    {
+      "slug": "aduan-kerosakan-aset",
+      "title": "Aduan Kerosakan Aset",
+      "description": "Aduan kerosakan aset alih dan aset tak alih.",
+      "processes": [
+        { "slug": "aduan-kerosakan", "title": "Aduan Kerosakan Aset Alih/Aset Tak Alih", "formId": "aduan-kerosakan-aset" },
+        { "slug": "alur-aset-tak-alih", "title": "Aset Tak Alih - Alur seperti Google Forms (Laman Warga Atom)" },
+        { "slug": "alur-aset-alih", "title": "Aset Alih - Reka bentuk seperti Kew.PA 10" }
+      ]
+    },
+    {
+      "slug": "pengurusan-media-kreatif",
+      "title": "Pengurusan Media Kreatif",
+      "description": "Permohonan media sosial, reka bentuk, penerbitan dan cenderamata.",
+      "processes": [
+        { "slug": "permohonan-upload-media-sosial", "title": "Permohonan Upload ke Media Sosial", "formId": "permohonan-media-sosial" },
+        { "slug": "template-letterhead", "title": "Template LetterHead" },
+        { "slug": "template-slide-logo", "title": "Template Slide Presentation dan Logo Jabatan/Kementerian" },
+        { "slug": "permohonan-jurufoto-juruvideo", "title": "Permohonan Jurufoto dan JuruVideo" },
+        { "slug": "permohonan-rekabentuk-percetakan", "title": "Permohonan Rekabentuk dan Percetakan" },
+        { "slug": "permohonan-isbn", "title": "Permohonan ISBN/eISBN/ISSN (Penerbitan)" },
+        { "slug": "permohonan-cenderamata", "title": "Permohonan Cenderamata dari Bahagian/PZ" }
+      ]
+    },
+    {
+      "slug": "galeri-gambar-media-kreatif",
+      "title": "Galeri Gambar (Media Kreatif)",
+      "description": "Repositori media bergambar.",
+      "processes": [
+        { "slug": "laporan-bergambar", "title": "Laporan Bergambar (Metadata)" },
+        { "slug": "repositori-watermark", "title": "Repositori (Watermark)" }
+      ]
+    },
+    {
+      "slug": "program-outreach-promosi",
+      "title": "Program Outreach dan Promosi",
+      "description": "Permohonan lawatan, kursus dan pameran.",
+      "processes": [
+        { "slug": "permohonan-outreach", "title": "Permohonan Lawatan/Kursus/Pameran (UKK, BDHL, Akademi Atom)" }
+      ]
+    },
+    {
+      "slug": "pentadbir-dalaman",
+      "title": "Pentadbir Dalaman",
+      "description": "Pentadbiran dalaman modul.",
+      "processes": [
+        { "slug": "pentadbir-dalaman", "title": "Pentadbir Dalaman" }
+      ]
+    },
+    {
+      "slug": "manual-pengguna",
+      "title": "Manual Pengguna",
+      "description": "Rujukan penggunaan modul.",
+      "processes": [
+        { "slug": "manual", "title": "Manual Pengguna" }
+      ]
+    },
+    {
+      "slug": "cadangan-mobile-apps",
+      "title": "Cadangan Mobile Apps",
+      "description": "Cadangan aplikasi mudah alih bagi operasi lapangan.",
+      "processes": [
+        { "slug": "apps-pemeriksaan", "title": "Apps Pemeriksaan (BKS + PZ)" },
+        { "slug": "apps-pelan-kecemasan", "title": "Apps Pengujian Pelan Kecemasan Syarikat (SPTN)" },
+        { "slug": "apps-verifikasi-tapak", "title": "Apps Verifikasi Tapak (BKS)" },
+        { "slug": "apps-penilaian-lawatan-tapak", "title": "Apps Penilaian Lawatan Tapak (BPP)" },
+        { "slug": "apps-aduan-kerosakan", "title": "Apps Aduan Kerosakan Aset Alih/Aset Tak Alih" }
+      ]
+    }
+  ]
+}

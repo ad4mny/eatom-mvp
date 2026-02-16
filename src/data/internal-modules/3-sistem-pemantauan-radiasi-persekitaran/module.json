@@ -1,0 +1,116 @@
+{
+  "moduleNo": 3,
+  "slug": "sistem-pemantauan-radiasi-persekitaran",
+  "routeSlug": "sistem-pemantauan-radiologi",
+  "title": "Sistem Pemantauan Radiasi Persekitaran",
+  "description": "Pemantauan radiasi persekitaran, data permonitoran, dan sokongan teknikal.",
+  "submodules": [
+    {
+      "slug": "laman-utama",
+      "title": "Laman Utama",
+      "description": "Paparan ringkas akses fungsi modul.",
+      "processes": [
+        { "slug": "laman-utama", "title": "Laman Utama", "description": "Paparan ringkasan modul." }
+      ]
+    },
+    {
+      "slug": "perlesenan",
+      "title": "Perlesenan",
+      "description": "Aliran pra permonitoran dan permohonan permonitoran.",
+      "processes": [
+        { "slug": "pra-permonitoran", "title": "Pra Permonitoran", "description": "Semakan awal sebelum permohonan." },
+        { "slug": "maklumat-lokasi-tapak", "title": "Maklumat Lokasi Tapak", "description": "Rekod lokasi tapak permonitoran." },
+        { "slug": "maklumat-persampelan", "title": "Maklumat Persampelan", "description": "Maklumat sampel dan kaedah persampelan." },
+        { "slug": "permohonan-permonitoran", "title": "Permohonan Permonitoran", "description": "Permohonan baharu permonitoran.", "formId": "permohonan-permonitoran" },
+        { "slug": "permohonan-baharu", "title": "Permohonan Baharu", "description": "Pendaftaran permohonan baharu." },
+        { "slug": "draf-pegawai", "title": "Draf Pegawai", "description": "Permohonan dalam draf pegawai." },
+        { "slug": "semua-permohonan", "title": "Semua Permohonan", "description": "Senarai keseluruhan permohonan." }
+      ]
+    },
+    {
+      "slug": "sokongan-teknikal",
+      "title": "Sokongan Teknikal",
+      "description": "Kemaskini lokasi, permonitoran, rekod perubatan dan dedahan.",
+      "processes": [
+        { "slug": "kemaskini-lokasi-syarikat-mineral", "title": "Kemaskini Lokasi Syarikat Mineral AELB" },
+        { "slug": "permonitoran-alam-sekitar", "title": "Permonitoran Alam Sekitar Syarikat Mineral AELB" },
+        { "slug": "rekod-perubatan", "title": "Rekod Perubatan Kakitangan" },
+        { "slug": "rekod-dedahan", "title": "Rekod Dedahan Kakitangan" },
+        { "slug": "manual-pengguna-sokongan", "title": "Manual Pengguna Sokongan Teknikal" }
+      ]
+    },
+    {
+      "slug": "instalasi-nuklear",
+      "title": "Instalasi Nuklear",
+      "description": "Fungsi teknikal instalasi nuklear untuk permonitoran.",
+      "processes": [
+        { "slug": "kemaskini-lokasi", "title": "Kemaskini Lokasi" },
+        { "slug": "kemaskini-code-parameter", "title": "Kemaskini Code Parameter" },
+        { "slug": "permonitoran-sampel", "title": "Permonitoran Sampel Reaktor Penyelidikan" }
+      ]
+    },
+    {
+      "slug": "kawalselia-sinaran",
+      "title": "Kawalselia Sinaran",
+      "description": "Aliran permonitoran bagi bukan pemegang lesen.",
+      "processes": [
+        { "slug": "kemaskini-lokasi-amang", "title": "Kemaskini Lokasi Bukan Pemegang Lesen (Amang)" },
+        { "slug": "permonitoran-amang", "title": "Permonitoran Alam Sekitar Bukan Pemegang Lesen (Amang)" },
+        { "slug": "laporan-amang", "title": "Laporan Syarikat Berlesen/Bukan Pemegang Lesen (Amang)" }
+      ]
+    },
+    {
+      "slug": "laporan",
+      "title": "Laporan",
+      "description": "Laporan umum, BST, instalasi dan BKS.",
+      "processes": [
+        { "slug": "maklumat-umum", "title": "Maklumat Umum" },
+        { "slug": "laporan-bst", "title": "Laporan BST" },
+        { "slug": "laporan-instalasi", "title": "Laporan Instalasi" },
+        { "slug": "laporan-bks", "title": "Laporan BKS" }
+      ]
+    },
+    {
+      "slug": "pemonitoran-dan-persampelan",
+      "title": "Pemonitoran dan Persampelan",
+      "description": "Data entry data radiologi dan alam sekitar.",
+      "processes": [
+        { "slug": "data-entry", "title": "Data Entry Maklumat Data Radiologi dan Alam Sekitar", "formId": "data-entry-radiologi" }
+      ]
+    },
+    {
+      "slug": "sistem-permonitoran-radiasi-kebangsaan-erms",
+      "title": "Sistem Permonitoran Radiasi Kebangsaan (ERMS)",
+      "description": "Aktiviti penyenggaraan alat ERMS.",
+      "processes": [
+        { "slug": "penyenggaraan-alat", "title": "Aktiviti Penyenggaraan Alat" }
+      ]
+    },
+    {
+      "slug": "inventori-dan-peminjaman-peralatan",
+      "title": "Inventori dan Peminjaman Peralatan",
+      "description": "Pengurusan inventori alat permonitoran.",
+      "processes": [
+        { "slug": "alat-permonitoran-smi-bst", "title": "Alat Permonitoran (SMI, BST)" },
+        { "slug": "alat-permonitoran-bins", "title": "Alat Permonitoran (BINS)" }
+      ]
+    },
+    {
+      "slug": "laporan-dan-kemaskini",
+      "title": "Laporan dan Kemaskini",
+      "description": "Laporan berkala personel dan persekitaran.",
+      "processes": [
+        { "slug": "laporan-berkala", "title": "Laporan Berkala (Personel dan Persekitaran)" },
+        { "slug": "laporan-permonitoran-alam-sekitar", "title": "Laporan Permonitoran Alam Sekitar (Nuklear dan Bukan Nuklear)" }
+      ]
+    },
+    {
+      "slug": "manual-pengguna",
+      "title": "Manual Pengguna",
+      "description": "Rujukan penggunaan modul.",
+      "processes": [
+        { "slug": "manual", "title": "Manual Pengguna" }
+      ]
+    }
+  ]
+}

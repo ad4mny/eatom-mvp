@@ -1,0 +1,144 @@
+{
+  "moduleNo": 5,
+  "slug": "sistem-pengurusan-dokumen",
+  "routeSlug": "sistem-pengurusan-dokumen",
+  "title": "Sistem Pengurusan Dokumen",
+  "description": "Pengurusan dokumen, surat, fail, ISO, mesyuarat dan laporan.",
+  "submodules": [
+    {
+      "slug": "laman-utama",
+      "title": "Laman Utama",
+      "description": "Paparan utama modul.",
+      "processes": [
+        { "slug": "laman-utama", "title": "Laman Utama" }
+      ]
+    },
+    {
+      "slug": "maklumat-dokumen",
+      "title": "Maklumat Dokumen",
+      "description": "Akses dokumen cetakan, mesyuarat, dan laporan kerja.",
+      "processes": [
+        { "slug": "tukar-katalaluan", "title": "Tukar Katalaluan" },
+        { "slug": "dokumen-cetakan", "title": "Dokumen Cetakan" },
+        { "slug": "dokumen-mesyuarat", "title": "Dokumen Mesyuarat" },
+        { "slug": "laporan-kertas-kerja-ndp-dpp", "title": "Laporan Kertas Kerja NDP dan DPP" },
+        { "slug": "kemaskini-dokumen", "title": "Kemaskini Dokumen" }
+      ]
+    },
+    {
+      "slug": "pengurusan-surat",
+      "title": "Pengurusan Surat",
+      "description": "Pengurusan surat masuk, surat keluar dan log trail.",
+      "processes": [
+        { "slug": "daftar-surat-masuk", "title": "Daftar Surat Masuk", "formId": "surat-masuk" },
+        { "slug": "surat-masuk", "title": "Surat Masuk" },
+        { "slug": "surat-keluar", "title": "Surat Keluar" },
+        { "slug": "pos-surat", "title": "Pos Surat" },
+        { "slug": "log-trail", "title": "Log Trail" },
+        { "slug": "semua-surat", "title": "Semua Surat" }
+      ]
+    },
+    {
+      "slug": "kawalan-fail",
+      "title": "Kawalan Fail",
+      "description": "Pengurusan rekod fail, pinjaman, status dan laporan.",
+      "processes": [
+        { "slug": "maklumat-fail", "title": "Maklumat Fail" },
+        { "slug": "peminjaman-pemulangan", "title": "Peminjaman/Pemulangan" },
+        { "slug": "laporan", "title": "Laporan" },
+        { "slug": "pentadbiran-fail", "title": "Pentadbiran Fail" },
+        { "slug": "status-fail", "title": "Status Fail" }
+      ]
+    },
+    {
+      "slug": "galeri",
+      "title": "Galeri",
+      "description": "Pengurusan aset media galeri.",
+      "processes": [
+        { "slug": "galeri-foto", "title": "Galeri Foto" },
+        { "slug": "galeri-imej", "title": "Galeri Imej" },
+        { "slug": "galeri-audio-video", "title": "Galeri Audio/Video" },
+        { "slug": "pentadbiran-galeri", "title": "Pentadbiran Galeri" }
+      ]
+    },
+    {
+      "slug": "dokumen-iso",
+      "title": "Dokumen ISO",
+      "description": "Akses dokumen ISO dalaman dan audit trail.",
+      "processes": [
+        { "slug": "iso-aelb", "title": "ISO AELB (Dalaman)" },
+        { "slug": "dokumen-iso-terkini", "title": "Dokumen ISO Terkini (Dalaman)" },
+        { "slug": "audit-trail", "title": "Audit Trail" },
+        { "slug": "pentadbir-iso", "title": "Pentadbir ISO" }
+      ]
+    },
+    {
+      "slug": "pentadbir-sistem",
+      "title": "Pentadbir Sistem",
+      "description": "Pentadbiran pengguna dan log sistem.",
+      "processes": [
+        { "slug": "kakitangan", "title": "Kakitangan" },
+        { "slug": "jawatan", "title": "Jawatan" },
+        { "slug": "gred", "title": "Gred" },
+        { "slug": "log-trail-espp", "title": "Log Trail eSPP" },
+        { "slug": "log-trail-edoc", "title": "Log Trail eDOC" }
+      ]
+    },
+    {
+      "slug": "pengurusan-mesyuarat",
+      "title": "Pengurusan Mesyuarat",
+      "description": "Pengurusan mesyuarat dan minit mesyuarat.",
+      "processes": [
+        { "slug": "mesyuarat-pengurusan", "title": "Mesyuarat Pengurusan" },
+        { "slug": "mesyuarat-forum-audit", "title": "Mesyuarat Forum Audit" },
+        { "slug": "mesyuarat-jkn", "title": "Mesyuarat JKN" },
+        { "slug": "mesyuarat-bahagian", "title": "Mesyuarat Bahagian" },
+        { "slug": "pengurusan-jemputan", "title": "Pengurusan Jemputan/Undangan Mesyuarat" },
+        { "slug": "pengurusan-minit", "title": "Pengurusan Minit Mesyuarat" }
+      ]
+    },
+    {
+      "slug": "dokumen-perundangan",
+      "title": "Dokumen Perundangan",
+      "description": "Rujukan akta, peraturan, perintah dan arahan.",
+      "processes": [
+        { "slug": "akta-db", "title": "Akta (DB)" },
+        { "slug": "peraturan-db", "title": "Peraturan (DB)" },
+        { "slug": "perintah-db", "title": "Perintah (DB)" },
+        { "slug": "arahan-bertulis", "title": "Arahan Bertulis" },
+        { "slug": "proses-perundangan", "title": "Proses Perundangan" }
+      ]
+    },
+    {
+      "slug": "dokumen-panduan",
+      "title": "Dokumen Panduan",
+      "description": "Koleksi dokumen panduan jabatan.",
+      "processes": [
+        { "slug": "atom-tek", "title": "ATOM/TEK" },
+        { "slug": "atom-pp", "title": "ATOM/PP" },
+        { "slug": "atom-am", "title": "ATOM/AM" },
+        { "slug": "atom-et", "title": "ATOM/ET" },
+        { "slug": "atom-ncnrm", "title": "ATOM/NCNRM" }
+      ]
+    },
+    {
+      "slug": "dokumen-forum-audit",
+      "title": "Dokumen Forum Audit",
+      "description": "Dokumen penyediaan dan status kertas bincang.",
+      "processes": [
+        { "slug": "profil-penyediaan", "title": "Borang Profil Penyediaan Dokumen" },
+        { "slug": "status-permohonan", "title": "Status Permohonan" },
+        { "slug": "kemaskini-kertas-bincang", "title": "Kemaskini Kertas Bincang" },
+        { "slug": "terima-pakai-kertas-bincang", "title": "Terima Pakai Kertas Bincang" }
+      ]
+    },
+    {
+      "slug": "manual-pengguna",
+      "title": "Manual Pengguna",
+      "description": "Rujukan penggunaan modul.",
+      "processes": [
+        { "slug": "manual", "title": "Manual Pengguna" }
+      ]
+    }
+  ]
+}

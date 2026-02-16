@@ -1,0 +1,50 @@
+{
+  "moduleNo": 6,
+  "slug": "maklumat-dos-pekerja-sinaran",
+  "routeSlug": "maklumat-dos-pekerja-sinaran",
+  "title": "Maklumat Dos Pekerja Sinaran",
+  "description": "Rekod dos kebangsaan serta laporan dan statistik dos pekerja sinaran.",
+  "submodules": [
+    {
+      "slug": "rekod-dos-kebangsaan",
+      "title": "Rekod Dos Kebangsaan",
+      "description": "Paparan dos pekerja sinaran mengikut jenis dedahan.",
+      "processes": [
+        { "slug": "hp10", "title": "Dos Berkesan (Seluruh Tubuh) (Hp (10))" },
+        { "slug": "hp007-kulit", "title": "Dos Setara Kulit (Hp (0.07))" },
+        { "slug": "hp3-kanta-mata", "title": "Dos Setara Kanta Mata (Hp (3))" },
+        { "slug": "hp007-jari-kiri", "title": "Dos Setara Jari Kiri (Hp (0.07))" },
+        { "slug": "hp007-jari-kanan", "title": "Dos Setara Jari Kanan (Hp (0.07))" }
+      ]
+    },
+    {
+      "slug": "laporan-dan-statistik",
+      "title": "Laporan dan Statistik",
+      "description": "Analitik laporan dan graf dos pekerja sinaran.",
+      "processes": [
+        { "slug": "laporan-mengikut-individu", "title": "Laporan Dos Mengikut Individu" },
+        { "slug": "laporan-tahunan-industri", "title": "Laporan Dos Tahunan Bidang Industri" },
+        { "slug": "laporan-tahunan-perubatan", "title": "Laporan Dos Tahunan Bidang Perubatan" },
+        { "slug": "laporan-pecahan-analisa", "title": "Laporan Dos Tahunan Mengikut Pecahan Analisa" },
+        { "slug": "laporan-keseluruhan", "title": "Laporan Dos Tahunan Keseluruhan" },
+        { "slug": "graf-purata-bulanan", "title": "Laporan dan Graf Purata Dos Dedahan Bulanan" },
+        { "slug": "graf-purata-terkumpul-aktiviti", "title": "Laporan dan Graf Purata Dos Dedahan Terkumpul Mengikut Aktiviti" },
+        { "slug": "graf-purata-terkumpul-5-tahun", "title": "Laporan dan Graf Purata Dos Dedahan Terkumpul Tahunan (5 Tahun)" },
+        { "slug": "graf-bilangan-dalam-had", "title": "Laporan dan Graf Bilangan Pekerja Dalam Had Dos Ditetapkan" },
+        { "slug": "graf-bilangan-melebihi-had", "title": "Laporan dan Graf Bilangan Pekerja Melebihi Had Dos" },
+        { "slug": "graf-peratus-dalam-had", "title": "Laporan dan Graf Peratus Pekerja Dalam Had Dos" },
+        { "slug": "graf-peratus-bawah-20msv", "title": "Laporan dan Graf Peratus Pekerja Di Bawah 20 mSv/Tahun (5 Tahun)" },
+        { "slug": "graf-pecahan-julat-dos", "title": "Laporan dan Graf Pecahan Dos Terkumpul Mengikut Julat Dos" },
+        { "slug": "graf-perbandingan-had", "title": "Laporan dan Graf Perbandingan Dalam Had dan Melebihi Had Dos" }
+      ]
+    },
+    {
+      "slug": "manual-pengguna",
+      "title": "Manual Pengguna",
+      "description": "Rujukan penggunaan modul.",
+      "processes": [
+        { "slug": "manual", "title": "Manual Pengguna" }
+      ]
+    }
+  ]
+}

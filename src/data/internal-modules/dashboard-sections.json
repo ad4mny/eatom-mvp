@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Peti Pesanan",
+    "description": "Akses tugasan harian dan senarai tindakan pegawai.",
+    "links": [
+      {
+        "label": "Tugasan Saya",
+        "href": "/modules/peti-pesanan/tugasan-saya",
+        "description": "Semak dan urus tugasan yang ditugaskan kepada anda."
+      }
+    ]
+  },
+  {
+    "title": "Pentadbiran Sistem",
+    "description": "Urus tetapan akaun dan penerimaan aduan sistem.",
+    "links": [
+      {
+        "label": "Tukar Kata Laluan",
+        "href": "/modules/pentadbiran-sistem/tukar-kata-laluan",
+        "description": "Kemaskini kata laluan akaun dalaman."
+      },
+      {
+        "label": "Terima Aduan",
+        "href": "/modules/pentadbiran-sistem/terima-aduan",
+        "description": "Terima aduan baharu dan teruskan ke aliran siasatan."
+      }
+    ]
+  },
+  {
+    "title": "Akses Modul Utama",
+    "description": "Pautan terus ke modul utama operasi eATOM.",
+    "links": [
+      {
+        "label": "Sistem Perlesenan dan Kawalselia",
+        "href": "/modules/perlesenan-dan-kawalselia",
+        "description": "Akses perlesenan, kawalselia, dan operasi berkaitan."
+      },
+      {
+        "label": "Sistem Pengurusan Sumber Manusia",
+        "href": "/modules/pengurusan-sumber-manusia",
+        "description": "Akses fungsi pengurusan sumber manusia dalaman."
+      },
+      {
+        "label": "Sistem Pemantauan Radiasi Persekitaran",
+        "href": "/modules/sistem-pemantauan-radiologi",
+        "description": "Akses pemantauan radiasi persekitaran."
+      },
+      {
+        "label": "Maklumat Pekerja Sinaran",
+        "href": "/modules/maklumat-pekerja-sinaran",
+        "description": "Akses pendaftaran, semakan, dan profil pekerja sinaran."
+      },
+      {
+        "label": "Sistem Pengurusan Dokumen",
+        "href": "/modules/sistem-pengurusan-dokumen",
+        "description": "Akses dokumen, surat, fail, dan laporan dokumen."
+      },
+      {
+        "label": "Maklumat Dos Pekerja Sinaran",
+        "href": "/modules/maklumat-dos-pekerja-sinaran",
+        "description": "Akses rekod dos kebangsaan serta laporan dos."
+      },
+      {
+        "label": "Sistem Khidmat Pengurusan",
+        "href": "/modules/sistem-khidmat-pengurusan",
+        "description": "Akses khidmat sokongan pengurusan dan media kreatif."
+      }
+    ]
+  },
+  {
+    "title": "Laporan dan Statistik",
+    "description": "Akses laporan operasi, output, dan statistik semasa.",
+    "links": [
+      {
+        "label": "Laporan dan Statistik",
+        "href": "/modules/laporan-statistik",
+        "description": "Jana dan semak laporan piagam, statistik, dan analitik."
+      }
+    ]
+  },
+  {
+    "title": "Manual Pengguna",
+    "description": "Panduan penggunaan modul untuk kakitangan.",
+    "links": [
+      {
+        "label": "Manual Pengguna",
+        "href": "/modules/manual-pengguna",
+        "description": "Rujukan dokumentasi penggunaan sistem eATOM."
+      }
+    ]
+  }
+]

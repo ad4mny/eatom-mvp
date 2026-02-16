@@ -1,0 +1,118 @@
+[
+  {
+    "id": "permohonan-permonitoran",
+    "title": "Permohonan Permonitoran",
+    "description": "Borang mock untuk permohonan permonitoran tapak.",
+    "submitLabel": "Hantar Permohonan",
+    "fields": [
+      { "name": "nama_syarikat", "label": "Nama Syarikat", "type": "text", "required": true, "placeholder": "Contoh: Syarikat Mineral A" },
+      { "name": "kategori_lokasi", "label": "Kategori Lokasi", "type": "select", "required": true, "options": ["Syarikat Mineral", "AELB", "Reaktor Penyelidikan"] },
+      { "name": "lokasi_tapak", "label": "Lokasi Tapak", "type": "text", "required": true, "placeholder": "Alamat tapak" },
+      { "name": "tarikh_cadangan", "label": "Tarikh Cadangan", "type": "date", "required": true },
+      { "name": "tujuan", "label": "Tujuan Permonitoran", "type": "textarea", "required": true, "placeholder": "Ringkasan tujuan" }
+    ]
+  },
+  {
+    "id": "data-entry-radiologi",
+    "title": "Data Entry Radiologi dan Alam Sekitar",
+    "description": "Borang mock untuk kemasukan data radiologi.",
+    "submitLabel": "Simpan Rekod",
+    "fields": [
+      { "name": "seksyen", "label": "Seksyen", "type": "select", "required": true, "options": ["Makmal BST", "BKS", "PZ", "BINS"] },
+      { "name": "jenis_sampel", "label": "Jenis Sampel", "type": "text", "required": true, "placeholder": "Air/Tanah/Udara" },
+      { "name": "tarikh_persampelan", "label": "Tarikh Persampelan", "type": "date", "required": true },
+      { "name": "bacaan_utama", "label": "Bacaan Utama", "type": "number", "required": true, "placeholder": "0.00" },
+      { "name": "catatan", "label": "Catatan", "type": "textarea", "required": false, "placeholder": "Catatan pemerhatian" }
+    ]
+  },
+  {
+    "id": "pendaftaran-peperiksaan",
+    "title": "Pendaftaran Peperiksaan",
+    "description": "Borang mock untuk pendaftaran peperiksaan pekerja sinaran.",
+    "submitLabel": "Daftar Peperiksaan",
+    "fields": [
+      { "name": "nama_penuh", "label": "Nama Penuh", "type": "text", "required": true, "placeholder": "Nama pemohon" },
+      { "name": "no_kp", "label": "No. KP/Passport", "type": "text", "required": true, "placeholder": "No. pengenalan" },
+      { "name": "jenis_peperiksaan", "label": "Jenis Peperiksaan", "type": "select", "required": true, "options": ["PPS", "PUK", "PR", "Tambahan PR Kanan"] },
+      { "name": "mod_peperiksaan", "label": "Kategori Permohonan", "type": "select", "required": true, "options": ["Baru", "Pengulangan", "Persijilan Semula"] },
+      { "name": "email", "label": "E-mel", "type": "email", "required": true, "placeholder": "contoh@domain.com" }
+    ]
+  },
+  {
+    "id": "kemaskini-profil-pekerja",
+    "title": "Kemaskini Profil Pekerja",
+    "description": "Borang mock untuk kemaskini profil pekerja sinaran.",
+    "submitLabel": "Simpan Kemaskini",
+    "fields": [
+      { "name": "nama_penuh", "label": "Nama Penuh", "type": "text", "required": true, "placeholder": "Nama pekerja" },
+      { "name": "kategori_kemaskini", "label": "Kategori Kemaskini", "type": "select", "required": true, "options": ["Biodata", "Akademik", "Pengalaman", "Majikan", "Kursus", "Akaun Pengguna"] },
+      { "name": "tarikh_kemaskini", "label": "Tarikh Kemaskini", "type": "date", "required": true },
+      { "name": "ringkasan", "label": "Ringkasan Kemaskini", "type": "textarea", "required": true, "placeholder": "Nyatakan perubahan" }
+    ]
+  },
+  {
+    "id": "surat-masuk",
+    "title": "Daftar Surat Masuk",
+    "description": "Borang mock untuk pendaftaran surat masuk.",
+    "submitLabel": "Daftar Surat",
+    "fields": [
+      { "name": "no_rujukan", "label": "No. Rujukan", "type": "text", "required": true, "placeholder": "Rujukan surat" },
+      { "name": "tarikh_terima", "label": "Tarikh Terima", "type": "date", "required": true },
+      { "name": "pengirim", "label": "Pengirim", "type": "text", "required": true, "placeholder": "Nama organisasi/pengirim" },
+      { "name": "tajuk", "label": "Tajuk Surat", "type": "text", "required": true, "placeholder": "Tajuk ringkas" },
+      { "name": "catatan", "label": "Catatan", "type": "textarea", "required": false, "placeholder": "Catatan tambahan" }
+    ]
+  },
+  {
+    "id": "permohonan-bdr",
+    "title": "Permohonan BDR",
+    "description": "Borang mock untuk permohonan bekerja dari rumah.",
+    "submitLabel": "Hantar Permohonan BDR",
+    "fields": [
+      { "name": "nama_pegawai", "label": "Nama Pegawai", "type": "text", "required": true, "placeholder": "Nama pegawai" },
+      { "name": "bahagian", "label": "Bahagian", "type": "text", "required": true, "placeholder": "Bahagian/Unit" },
+      { "name": "sebab", "label": "Sebab Permohonan", "type": "select", "required": true, "options": ["Penyakit Berjangkit", "Tiada Pengasuh Anak", "Sekolah Tutup"] },
+      { "name": "tarikh_mula", "label": "Tarikh Mula", "type": "date", "required": true },
+      { "name": "tarikh_tamat", "label": "Tarikh Tamat", "type": "date", "required": true },
+      { "name": "justifikasi", "label": "Justifikasi", "type": "textarea", "required": true, "placeholder": "Nyatakan justifikasi" }
+    ]
+  },
+  {
+    "id": "tempahan-kenderaan",
+    "title": "Tempahan Kenderaan",
+    "description": "Borang mock tempahan kenderaan rasmi.",
+    "submitLabel": "Hantar Tempahan",
+    "fields": [
+      { "name": "nama_pemohon", "label": "Nama Pemohon", "type": "text", "required": true, "placeholder": "Nama pemohon" },
+      { "name": "tujuan_perjalanan", "label": "Tujuan Perjalanan", "type": "text", "required": true, "placeholder": "Tujuan" },
+      { "name": "destinasi", "label": "Destinasi", "type": "text", "required": true, "placeholder": "Lokasi destinasi" },
+      { "name": "tarikh_bertolak", "label": "Tarikh Bertolak", "type": "date", "required": true },
+      { "name": "bil_penumpang", "label": "Bilangan Penumpang", "type": "number", "required": true, "placeholder": "Contoh: 4" }
+    ]
+  },
+  {
+    "id": "aduan-kerosakan-aset",
+    "title": "Aduan Kerosakan Aset",
+    "description": "Borang mock aduan kerosakan aset alih/tak alih.",
+    "submitLabel": "Hantar Aduan",
+    "fields": [
+      { "name": "kategori_aset", "label": "Kategori Aset", "type": "select", "required": true, "options": ["Aset Tak Alih", "Aset Alih"] },
+      { "name": "lokasi", "label": "Lokasi", "type": "text", "required": true, "placeholder": "Lokasi aset" },
+      { "name": "tarikh_aduan", "label": "Tarikh Aduan", "type": "date", "required": true },
+      { "name": "deskripsi_kerosakan", "label": "Deskripsi Kerosakan", "type": "textarea", "required": true, "placeholder": "Nyatakan kerosakan" },
+      { "name": "tahap_keutamaan", "label": "Tahap Keutamaan", "type": "select", "required": true, "options": ["Rendah", "Sederhana", "Tinggi"] }
+    ]
+  },
+  {
+    "id": "permohonan-media-sosial",
+    "title": "Permohonan Upload Media Sosial",
+    "description": "Borang mock permohonan siaran media kreatif.",
+    "submitLabel": "Hantar Permohonan",
+    "fields": [
+      { "name": "tajuk_kandungan", "label": "Tajuk Kandungan", "type": "text", "required": true, "placeholder": "Tajuk ringkas" },
+      { "name": "platform", "label": "Platform", "type": "select", "required": true, "options": ["Facebook", "Instagram", "X", "YouTube", "Lain-lain"] },
+      { "name": "tarikh_siaran", "label": "Tarikh Cadangan Siaran", "type": "date", "required": true },
+      { "name": "objektif", "label": "Objektif", "type": "textarea", "required": true, "placeholder": "Tujuan kandungan" }
+    ]
+  }
+]

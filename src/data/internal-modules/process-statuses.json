@@ -1,0 +1,5 @@
+{
+  "statuses": ["Baru", "Dalam Semakan", "Dalam Proses", "Selesai"],
+  "owners": ["Pegawai Proses", "Ketua Unit", "Penyelia", "Pentadbir"],
+  "priorities": ["Rendah", "Sederhana", "Tinggi"]
+}

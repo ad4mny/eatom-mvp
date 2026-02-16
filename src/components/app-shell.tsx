@@ -41,32 +41,11 @@ export default function AppShell({
   const navItems: NavItem[] = session
     ? session.role === "internal"
       ? [
-          { href: "/dashboard/internal", label: "Dashboard Dalaman" },
+          { href: "/dashboard/internal", label: "Dashboard eATOM" },
           {
-            href: "/modules/perlesenan-dan-kawalselia",
-            label: "Perlesenan & Kawalselia",
-            activePrefixes: [
-              "/modules/perlesenan",
-              "/modules/kawalselia",
-              "/modules/instalasi-nuklear",
-              "/modules/pengkompaunan",
-              "/modules/penggeledahan",
-              "/modules/siasatan-pendakwaan",
-              "/modules/pengurusan-tindakbalas-nuklear-sptn",
-              "/modules/permit",
-              "/modules/peperiksaan-pensijilan",
-              "/modules/pengiktirafan",
-              "/modules/penilaian-lawatan-tapak",
-              "/modules/kewangan",
-              "/modules/pangkalan-data",
-              "/modules/laporan-statistik",
-              "/modules/pentadbir-dalaman",
-              "/modules/manual-pengguna",
-            ],
-          },
-          {
-            href: "/modules/pengurusan-sumber-manusia",
-            label: "Pengurusan Sumber Manusia",
+            href: "/modules",
+            label: "Modul eATOM",
+            activePrefixes: ["/modules"],
           },
         ]
       : session.role === "external_pl"

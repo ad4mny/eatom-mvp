@@ -1,0 +1,75 @@
+{
+  "moduleNo": 4,
+  "slug": "maklumat-pekerja-sinaran",
+  "routeSlug": "maklumat-pekerja-sinaran",
+  "title": "Maklumat Pekerja Sinaran",
+  "description": "Pengurusan pendaftaran, semakan, dan kemaskini profil pekerja sinaran.",
+  "submodules": [
+    {
+      "slug": "laman-utama",
+      "title": "Laman Utama",
+      "description": "Paparan ringkasan modul.",
+      "processes": [
+        { "slug": "laman-utama", "title": "Laman Utama" }
+      ]
+    },
+    {
+      "slug": "pendaftaran-peperiksaan",
+      "title": "Pendaftaran (Peperiksaan)",
+      "description": "Pendaftaran peperiksaan PPS/PUK/PR.",
+      "processes": [
+        { "slug": "daftar-peperiksaan", "title": "Pendaftaran Peperiksaan", "formId": "pendaftaran-peperiksaan" },
+        { "slug": "pps-skema-baru", "title": "Pegawai Perlindungan Sinaran - Skema Baru" },
+        { "slug": "puk-baru", "title": "Pengendali Ujian Kebocoran - Baru (Pertama Kali)" },
+        { "slug": "puk-pengulangan", "title": "Pengendali Ujian Kebocoran - Pengulangan" },
+        { "slug": "pr-baru", "title": "Pengendali Reaktor - Baru (Pertama Kali)" },
+        { "slug": "pr-lengkap", "title": "Pengendali Reaktor - Baru (Melengkapkan Peperiksaan)" },
+        { "slug": "pr-pengulangan", "title": "Pengendali Reaktor - Pengulangan" },
+        { "slug": "pr-persijilan-semula", "title": "Pengendali Reaktor - Persijilan Semula" },
+        { "slug": "pr-kanan-baru", "title": "Tambahan Pengendali Reaktor Kanan - Baru" }
+      ]
+    },
+    {
+      "slug": "semakan-peperiksaan",
+      "title": "Semakan (Peperiksaan)",
+      "description": "Semakan permohonan, pembayaran dan keputusan peperiksaan.",
+      "processes": [
+        { "slug": "semakan-pps", "title": "Semakan Pegawai Perlindungan Sinaran" },
+        { "slug": "semakan-puk", "title": "Semakan Pengendali Ujian Kebocoran" },
+        { "slug": "semakan-pr", "title": "Semakan Pengendali Reaktor" }
+      ]
+    },
+    {
+      "slug": "maklumbalas-dan-kemaskini-profil",
+      "title": "Maklumbalas dan Kemaskini (Profil Pekerja)",
+      "description": "Kemaskini biodata, akademik, pengalaman, kursus dan akaun.",
+      "processes": [
+        { "slug": "kemaskini-profil", "title": "Kemaskini Profil Pekerja", "formId": "kemaskini-profil-pekerja" },
+        { "slug": "kemaskini-biodata", "title": "Kemaskini Biodata" },
+        { "slug": "kemaskini-akademik", "title": "Kemaskini Akademik" },
+        { "slug": "kemaskini-pengalaman", "title": "Kemaskini Pengalaman PPS/PUK/PR" },
+        { "slug": "kemaskini-majikan", "title": "Kemaskini Majikan" },
+        { "slug": "kemaskini-kursus", "title": "Kemaskini Kursus" },
+        { "slug": "kemaskini-bahan-radioaktif", "title": "Kemaskini Bahan Radioaktif" },
+        { "slug": "kemaskini-radas-penyinaran", "title": "Kemaskini Radas Penyinaran" },
+        { "slug": "kemaskini-akaun", "title": "Kemaskini Akaun Pengguna" }
+      ]
+    },
+    {
+      "slug": "permohonan",
+      "title": "Permohonan",
+      "description": "Aliran permohonan tambahan modul.",
+      "processes": [
+        { "slug": "pelantikan-ppb", "title": "Pelantikan PPB" }
+      ]
+    },
+    {
+      "slug": "manual-pengguna",
+      "title": "Manual Pengguna",
+      "description": "Rujukan penggunaan modul.",
+      "processes": [
+        { "slug": "manual", "title": "Manual Pengguna" }
+      ]
+    }
+  ]
+}
